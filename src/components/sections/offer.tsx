@@ -190,18 +190,7 @@ export function Offer({ dict }: { dict: Dictionary["offer"] }) {
         </div>
 
         <Reveal delay={0.28}>
-          <div className="glass-card mx-auto mt-8 max-w-4xl rounded-2xl px-6 py-5 sm:px-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-accent">
-              {dict.comparison.title}
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-              {dict.comparison.body}
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.34}>
-          <div className="glass-card mx-auto mt-6 flex max-w-4xl flex-col gap-6 rounded-3xl p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+          <div className="glass-card mx-auto mt-8 flex max-w-4xl flex-col gap-6 rounded-3xl p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-strong text-accent">

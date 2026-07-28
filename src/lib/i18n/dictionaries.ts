@@ -77,10 +77,6 @@ export interface Dictionary {
       features: string[];
       cta: string;
     }>;
-    comparison: {
-      title: string;
-      body: string;
-    };
     agency: {
       tag: string;
       name: string;
@@ -332,10 +328,6 @@ const fr: Dictionary = {
         cta: "Bientôt disponible",
       },
     ],
-    comparison: {
-      title: "Face à Mindbody et les suites génériques",
-      body: "Mindbody démarre autour de 139–159 $ US/mois (~190–220 $ CA) pour le basique, et grimpe souvent à 399–699 $ US/mois (~540–950 $ CA) une fois multi-salles, paie et marque blanche ajoutés — sans parité Lead/Follow native. RitmoKit remplace booking + paie + locations de salle dans un seul outil pensé pour la danse.",
-    },
     agency: {
       tag: "Configuration sur mesure (optionnelle)",
       name: "Accompagnement Arsitech",
@@ -592,10 +584,6 @@ const en: Dictionary = {
         cta: "Coming soon",
       },
     ],
-    comparison: {
-      title: "Vs Mindbody and generic gym suites",
-      body: "Mindbody starts around US$139–159/mo (~CA$190–220) for basics, and often climbs to US$399–699/mo (~CA$540–950) once multi-room, payroll and branding are added — with no native Lead/Follow parity. RitmoKit replaces booking + payroll + room rentals in one dance-native toolkit.",
-    },
     agency: {
       tag: "Optional custom setup",
       name: "Arsitech onboarding",
@@ -852,10 +840,6 @@ const es: Dictionary = {
         cta: "Próximamente",
       },
     ],
-    comparison: {
-      title: "Frente a Mindbody y suites genéricas",
-      body: "Mindbody empieza cerca de 139–159 US$/mes (~190–220 CA$) en lo básico, y suele subir a 399–699 US$/mes (~540–950 CA$) al añadir multi-salas, nómina y marca blanca — sin paridad Lead/Follow nativa. RitmoKit reemplaza reservas + nómina + alquiler de salas en una sola herramienta pensada para la danza.",
-    },
     agency: {
       tag: "Configuración personalizada (opcional)",
       name: "Acompañamiento Arsitech",
