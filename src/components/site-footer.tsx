@@ -32,7 +32,7 @@ export function SiteFooter({
               rel="noopener noreferrer"
               className="text-ink-muted transition-colors hover:text-accent"
             >
-              arsitech.io
+              ARSITECH.IO
             </a>
             .
           </p>
