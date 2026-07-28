@@ -60,28 +60,26 @@ export interface Dictionary {
     kicker: string;
     title: string;
     subtitle: string;
-    saas: {
+    billing: {
+      monthly: string;
+      annual: string;
+      recommended: string;
+    };
+    trialBadge: string;
+    plans: Array<{
+      id: "solo" | "pro" | "entreprise";
       name: string;
-      billing: {
-        monthly: string;
-        annual: string;
-        recommended: string;
-      };
-      monthly: {
-        price: string;
-        suffix: string;
-        note: string;
-      };
-      annual: {
-        price: string;
-        suffix: string;
-        note: string;
-        savings: string;
-      };
-      setupNote: string;
-      trialBadge: string;
+      tagline: string;
+      badge: string | null;
+      highlighted: boolean;
+      monthly: { price: string; suffix: string; note: string };
+      annual: { price: string; suffix: string; note: string; savings: string };
       features: string[];
       cta: string;
+    }>;
+    comparison: {
+      title: string;
+      body: string;
     };
     agency: {
       tag: string;
@@ -243,37 +241,100 @@ const fr: Dictionary = {
   },
   offer: {
     kicker: "Tarifs",
-    title: "Un abonnement simple. Votre studio sous contrôle.",
+    title: "Des forfaits clairs. Du solo à l'entreprise multi-salles.",
     subtitle:
-      "RitmoKit, c'est le logiciel. Intégrez-le vous-même via API et widgets — ou faites appel à Arsitech pour une configuration sur mesure.",
-    saas: {
-      name: "Abonnement RitmoKit",
-      billing: {
-        monthly: "Mensuel",
-        annual: "Annuel",
-        recommended: "Recommandé",
+      "Choisissez le niveau qui correspond à votre studio — ou à votre réseau. Intégration libre-service via API et widgets, ou configuration clé en main avec Arsitech.",
+    billing: {
+      monthly: "Mensuel",
+      annual: "Annuel",
+      recommended: "Recommandé",
+    },
+    trialBadge: "Essai gratuit de 14 jours",
+    plans: [
+      {
+        id: "solo",
+        name: "Solo / Studio",
+        tagline: "1 studio · jusqu'à 150 élèves",
+        badge: null,
+        highlighted: false,
+        monthly: {
+          price: "79 $",
+          suffix: "/ mois + tx",
+          note: "Sans engagement, annulation à tout moment",
+        },
+        annual: {
+          price: "59 $",
+          suffix: "/ mois + tx",
+          note: "Facturé annuellement",
+          savings: "Économisez 240 $ / an",
+        },
+        features: [
+          "1 studio / emplacement",
+          "Jusqu'à 150 élèves actifs",
+          "Gestion des cours, horaires et salles",
+          "Widgets de réservation intégrables",
+          "Accès API publique de base",
+        ],
+        cta: "Bientôt disponible",
       },
-      monthly: {
-        price: "79 $",
-        suffix: "/ mois + tx",
-        note: "Sans engagement, annulation à tout moment",
+      {
+        id: "pro",
+        name: "Pro / Multi-Studio",
+        tagline: "Jusqu'à 3 studios · parité & paie",
+        badge: "Populaire",
+        highlighted: true,
+        monthly: {
+          price: "199 $",
+          suffix: "/ mois + tx",
+          note: "Sans engagement, annulation à tout moment",
+        },
+        annual: {
+          price: "149 $",
+          suffix: "/ mois + tx",
+          note: "Facturé annuellement",
+          savings: "Économisez 600 $ / an",
+        },
+        features: [
+          "Jusqu'à 3 studios / emplacements",
+          "Moteur de parité Lead / Follow",
+          "Paie des instructeurs (horaire, forfait, commission)",
+          "Intégration web (widgets + API complète)",
+          "Cockpit Studio : rendement $/m² et heatmaps",
+          "Élèves et cours illimités",
+        ],
+        cta: "Bientôt disponible",
       },
-      annual: {
-        price: "59 $",
-        suffix: "/ mois + tx",
-        note: "Facturé annuellement",
-        savings: "Économisez 240 $ / an",
+      {
+        id: "entreprise",
+        name: "Entreprise / Multi-Salles",
+        tagline: "5+ studios · opérations avancées",
+        badge: "Multi-salles",
+        highlighted: false,
+        monthly: {
+          price: "298 $",
+          suffix: "/ mois + tx",
+          note: "Licence réseau — valeur régulière affichée",
+        },
+        annual: {
+          price: "224 $",
+          suffix: "/ mois + tx",
+          note: "Facturé annuellement",
+          savings: "Économisez 888 $ / an",
+        },
+        features: [
+          "5+ studios / multi-salles",
+          "Matrice de réservation en temps réel",
+          "Moteur de parité avancé + listes d'attente ciblées",
+          "Paie automatisée et remplacements",
+          "Analytique financière (profit / cours, $/m², churn)",
+          "Support prioritaire",
+        ],
+        cta: "Bientôt disponible",
       },
-      setupNote:
-        "Intégration libre-service via API et widgets — configuration sur mesure optionnelle avec Arsitech.",
-      trialBadge: "Essai gratuit de 14 jours",
-      features: [
-        "Cockpit Studio complet : Radar de parité, matrice de rendement $/m², heatmaps",
-        "Widgets de réservation et de location de salle intégrables à votre site actuel",
-        "Accès complet à l'API publique (/api/public/*)",
-        "Élèves et cours illimités",
-      ],
-      cta: "Bientôt disponible",
+    ],
+    comparison: {
+      title: "Face à Mindbody et les suites génériques",
+      body: "Mindbody démarre autour de 139–159 $ US/mois (~190–220 $ CA) pour le basique, et grimpe souvent à 399–699 $ US/mois (~540–950 $ CA) une fois multi-salles, paie et marque blanche ajoutés — sans parité Lead/Follow native. RitmoKit remplace booking + paie + locations de salle dans un seul outil pensé pour la danse.",
     },
     agency: {
       tag: "Configuration sur mesure (optionnelle)",
@@ -440,37 +501,100 @@ const en: Dictionary = {
   },
   offer: {
     kicker: "Pricing",
-    title: "One simple subscription. Your studio under control.",
+    title: "Clear tiers. From a single studio to a multi-room network.",
     subtitle:
-      "RitmoKit is the software. Self-serve embed via API and widgets — or optional custom setup through Arsitech.",
-    saas: {
-      name: "RitmoKit subscription",
-      billing: {
-        monthly: "Monthly",
-        annual: "Annual",
-        recommended: "Recommended",
+      "Pick the level that matches your studio — or your network. Self-serve via API and widgets, or turnkey setup with Arsitech.",
+    billing: {
+      monthly: "Monthly",
+      annual: "Annual",
+      recommended: "Recommended",
+    },
+    trialBadge: "14-day free trial",
+    plans: [
+      {
+        id: "solo",
+        name: "Solo / Studio",
+        tagline: "1 studio · up to 150 students",
+        badge: null,
+        highlighted: false,
+        monthly: {
+          price: "$79",
+          suffix: "/ month + tax",
+          note: "No commitment, cancel anytime",
+        },
+        annual: {
+          price: "$59",
+          suffix: "/ month + tax",
+          note: "Billed annually",
+          savings: "Save $240 / year",
+        },
+        features: [
+          "1 studio / location",
+          "Up to 150 active students",
+          "Class, schedule & room management",
+          "Embeddable booking widgets",
+          "Basic public API access",
+        ],
+        cta: "Coming soon",
       },
-      monthly: {
-        price: "$79",
-        suffix: "/ month + tax",
-        note: "No commitment, cancel anytime",
+      {
+        id: "pro",
+        name: "Pro / Multi-Studio",
+        tagline: "Up to 3 studios · parity & payroll",
+        badge: "Popular",
+        highlighted: true,
+        monthly: {
+          price: "$199",
+          suffix: "/ month + tax",
+          note: "No commitment, cancel anytime",
+        },
+        annual: {
+          price: "$149",
+          suffix: "/ month + tax",
+          note: "Billed annually",
+          savings: "Save $600 / year",
+        },
+        features: [
+          "Up to 3 studios / locations",
+          "Lead / Follow parity engine",
+          "Instructor payroll (hourly, flat, commission)",
+          "Web integration (widgets + full API)",
+          "Studio Cockpit: $/m² yield & heatmaps",
+          "Unlimited students & classes",
+        ],
+        cta: "Coming soon",
       },
-      annual: {
-        price: "$59",
-        suffix: "/ month + tax",
-        note: "Billed annually",
-        savings: "Save $240 / year",
+      {
+        id: "entreprise",
+        name: "Enterprise / Multi-Room",
+        tagline: "5+ studios · advanced operations",
+        badge: "Multi-room",
+        highlighted: false,
+        monthly: {
+          price: "$298",
+          suffix: "/ month + tax",
+          note: "Network licence — listed regular value",
+        },
+        annual: {
+          price: "$224",
+          suffix: "/ month + tax",
+          note: "Billed annually",
+          savings: "Save $888 / year",
+        },
+        features: [
+          "5+ studios / multi-room",
+          "Real-time booking matrix",
+          "Advanced parity engine + targeted waitlists",
+          "Automated payroll & substitute logs",
+          "Financial analytics (profit / class, $/m², churn)",
+          "Priority support",
+        ],
+        cta: "Coming soon",
       },
-      setupNote:
-        "Self-serve setup via API & embeddable widgets — optional custom onboarding with Arsitech.",
-      trialBadge: "14-day free trial",
-      features: [
-        "Full Studio Cockpit: Parity Radar, $/m² yield matrix, heatmaps",
-        "Embeddable booking & room rental widgets for your existing website",
-        "Full public API access (/api/public/*)",
-        "Unlimited students & classes",
-      ],
-      cta: "Coming soon",
+    ],
+    comparison: {
+      title: "Vs Mindbody and generic gym suites",
+      body: "Mindbody starts around US$139–159/mo (~CA$190–220) for basics, and often climbs to US$399–699/mo (~CA$540–950) once multi-room, payroll and branding are added — with no native Lead/Follow parity. RitmoKit replaces booking + payroll + room rentals in one dance-native toolkit.",
     },
     agency: {
       tag: "Optional custom setup",
@@ -637,37 +761,100 @@ const es: Dictionary = {
   },
   offer: {
     kicker: "Precios",
-    title: "Una suscripción simple. Tu academia bajo control.",
+    title: "Planes claros. Del estudio solo a la red multi-salas.",
     subtitle:
-      "RitmoKit es el software. Intégralo tú mismo vía API y widgets — o solicita configuración personalizada con Arsitech.",
-    saas: {
-      name: "Suscripción RitmoKit",
-      billing: {
-        monthly: "Mensual",
-        annual: "Anual",
-        recommended: "Recomendado",
+      "Elige el nivel que corresponde a tu academia — o a tu red. Integración autoservicio vía API y widgets, o despliegue llave en mano con Arsitech.",
+    billing: {
+      monthly: "Mensual",
+      annual: "Anual",
+      recommended: "Recomendado",
+    },
+    trialBadge: "Prueba gratis de 14 días",
+    plans: [
+      {
+        id: "solo",
+        name: "Solo / Estudio",
+        tagline: "1 estudio · hasta 150 alumnos",
+        badge: null,
+        highlighted: false,
+        monthly: {
+          price: "79 $",
+          suffix: "/ mes + imp.",
+          note: "Sin compromiso, cancela cuando quieras",
+        },
+        annual: {
+          price: "59 $",
+          suffix: "/ mes + imp.",
+          note: "Facturación anual",
+          savings: "Ahorra 240 $ / año",
+        },
+        features: [
+          "1 estudio / sede",
+          "Hasta 150 alumnos activos",
+          "Gestión de clases, horarios y salas",
+          "Widgets de reserva integrables",
+          "Acceso básico a la API pública",
+        ],
+        cta: "Próximamente",
       },
-      monthly: {
-        price: "79 $",
-        suffix: "/ mes + imp.",
-        note: "Sin compromiso, cancela cuando quieras",
+      {
+        id: "pro",
+        name: "Pro / Multi-Estudio",
+        tagline: "Hasta 3 estudios · paridad y nómina",
+        badge: "Popular",
+        highlighted: true,
+        monthly: {
+          price: "199 $",
+          suffix: "/ mes + imp.",
+          note: "Sin compromiso, cancela cuando quieras",
+        },
+        annual: {
+          price: "149 $",
+          suffix: "/ mes + imp.",
+          note: "Facturación anual",
+          savings: "Ahorra 600 $ / año",
+        },
+        features: [
+          "Hasta 3 estudios / sedes",
+          "Motor de paridad Lead / Follow",
+          "Nómina de instructores (hora, fijo, comisión)",
+          "Integración web (widgets + API completa)",
+          "Cabina del Estudio: rendimiento $/m² y mapas de calor",
+          "Alumnos y clases ilimitados",
+        ],
+        cta: "Próximamente",
       },
-      annual: {
-        price: "59 $",
-        suffix: "/ mes + imp.",
-        note: "Facturación anual",
-        savings: "Ahorra 240 $ / año",
+      {
+        id: "entreprise",
+        name: "Empresa / Multi-Salas",
+        tagline: "5+ estudios · operaciones avanzadas",
+        badge: "Multi-salas",
+        highlighted: false,
+        monthly: {
+          price: "298 $",
+          suffix: "/ mes + imp.",
+          note: "Licencia de red — valor regular publicado",
+        },
+        annual: {
+          price: "224 $",
+          suffix: "/ mes + imp.",
+          note: "Facturación anual",
+          savings: "Ahorra 888 $ / año",
+        },
+        features: [
+          "5+ estudios / multi-salas",
+          "Matriz de reservas en tiempo real",
+          "Motor de paridad avanzado + listas de espera dirigidas",
+          "Nómina automatizada y suplencias",
+          "Analítica financiera (beneficio / clase, $/m², churn)",
+          "Soporte prioritario",
+        ],
+        cta: "Próximamente",
       },
-      setupNote:
-        "Integración autoservicio vía API y widgets — configuración personalizada opcional con Arsitech.",
-      trialBadge: "Prueba gratis de 14 días",
-      features: [
-        "Cabina del Estudio completa: Radar de paridad, matriz de rendimiento $/m², mapas de calor",
-        "Widgets de reservas y alquiler de salas integrables en tu sitio web actual",
-        "Acceso completo a la API pública (/api/public/*)",
-        "Alumnos y clases ilimitados",
-      ],
-      cta: "Próximamente",
+    ],
+    comparison: {
+      title: "Frente a Mindbody y suites genéricas",
+      body: "Mindbody empieza cerca de 139–159 US$/mes (~190–220 CA$) en lo básico, y suele subir a 399–699 US$/mes (~540–950 CA$) al añadir multi-salas, nómina y marca blanca — sin paridad Lead/Follow nativa. RitmoKit reemplaza reservas + nómina + alquiler de salas en una sola herramienta pensada para la danza.",
     },
     agency: {
       tag: "Configuración personalizada (opcional)",
