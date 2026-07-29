@@ -105,7 +105,7 @@ const fr: Dictionary = {
   meta: {
     title: "RitmoKit — Le kit d'opérations pour écoles de danse",
     description:
-      "Sessions, parité Lead / Follow, Accueil sur tablette, locations de salles, Cockpit $/m² et paiements PayPal sur votre site — le kit d'opérations conçu pour les écoles de danse au Québec et ailleurs.",
+      "Sessions, parité Lead / Follow, Accueil, locations de salles, Cockpit $/m², Cahier du prof et PayPal sur votre site — le kit d'opérations conçu pour les écoles de danse au Québec et ailleurs.",
   },
   nav: {
     problem: "Le problème",
@@ -120,7 +120,7 @@ const fr: Dictionary = {
     title: "Reprenez le contrôle de votre",
     titleAccent: "studio de danse.",
     subtitle:
-      "Sessions, parité Lead / Follow, Accueil sur tablette, locations de salles, Cockpit $/m² et paiements PayPal sur votre site — une seule source de vérité pour votre école de danse.",
+      "Sessions, parité Lead / Follow, Accueil, locations de salles, Cockpit $/m², Cahier du prof et PayPal sur votre site — une seule source de vérité pour votre école de danse.",
     ctaPrimary: "Bientôt disponible",
     ctaSecondary: "Voir les tarifs",
     cockpit: {
@@ -205,10 +205,10 @@ const fr: Dictionary = {
     ],
   },
   features: {
-    kicker: "Les 6 piliers",
+    kicker: "Les 7 piliers",
     title: "Tout ce qu'une école de danse moderne doit maîtriser.",
     subtitle:
-      "De la publication de session aux locations de salles, l'Accueil sur tablette, la parité Lead / Follow et les paiements sur votre site.",
+      "De la publication de session au Cahier du prof, en passant par l'Accueil, la parité Lead / Follow, les locations de salles et les paiements sur votre site.",
     pillars: [
       {
         name: "Parité Lead / Follow",
@@ -246,6 +246,12 @@ const fr: Dictionary = {
         description:
           "Widgets d'inscription, API publique headless et paiements PayPal sur la vitrine de votre studio — RitmoKit reste le moteur.",
       },
+      {
+        name: "Cahier du prof",
+        tagline: "« Salsa N1 — Semaine 3, prêt pour ce soir. »",
+        description:
+          "Plans de cours, figures, chorés et guides studio — vidéo et étapes par module. Parcours Accueil nouveau prof et sécurité si besoin. Même lecteur, langage danse.",
+      },
     ],
   },
   offer: {
@@ -281,6 +287,7 @@ const fr: Dictionary = {
           "1 studio / emplacement",
           "Grille Sessions, Accueil & locations de salles",
           "Parité Lead / Follow de base",
+          "Cahier du prof (plans de cours & guides studio)",
           "Integration Hub PayPal + widgets",
           "API publique",
         ],
@@ -308,6 +315,7 @@ const fr: Dictionary = {
           "Moteur de parité Lead / Follow + waitlists par rôle",
           "Paie instructeurs (horaire, forfait, commission)",
           "Cockpit $/m² + heatmaps + promotion de créneaux",
+          "Cahier du prof complet (figures, chorés, vidéo)",
           "Dance Agentics (propositions confirmées)",
           "API + widgets complets",
         ],
@@ -335,6 +343,7 @@ const fr: Dictionary = {
           "Matrice salles + locations privées",
           "Parité Lead / Follow avancée + listes d'attente",
           "Agentics + liste de risque churn",
+          "Catalogue formation multi-studios",
           "Analytique financière ($/m², profit/cours)",
           "Support prioritaire + garde-fous CNESST",
         ],
@@ -374,7 +383,7 @@ const en: Dictionary = {
   meta: {
     title: "RitmoKit — The operations kit for dance schools",
     description:
-      "Sessions, Lead/Follow parity, tablet Accueil check-in, room rentals, $/m² Cockpit, and PayPal on your website — the operations kit built for dance schools in Québec and beyond.",
+      "Sessions, Lead / Follow parity, Accueil, room rentals, $/m² Cockpit, Teaching hub, and PayPal on your website — the operations kit built for dance schools in Québec and beyond.",
   },
   nav: {
     problem: "The problem",
@@ -389,7 +398,7 @@ const en: Dictionary = {
     title: "Take back control of your",
     titleAccent: "dance studio.",
     subtitle:
-      "Sessions, Lead/Follow parity, tablet Accueil check-in, room rentals, $/m² Cockpit, and PayPal on your website — one source of truth for your dance school.",
+      "Sessions, Lead / Follow parity, Accueil, room rentals, $/m² Cockpit, Teaching hub, and PayPal on your website — one source of truth for your dance school.",
     ctaPrimary: "Coming soon",
     ctaSecondary: "See pricing",
     cockpit: {
@@ -474,10 +483,10 @@ const en: Dictionary = {
     ],
   },
   features: {
-    kicker: "The 6 core pillars",
+    kicker: "The 7 core pillars",
     title: "Everything a modern dance school needs to run.",
     subtitle:
-      "From session publishing and room rentals to tablet Accueil check-in, Lead/Follow parity, and payments on your website.",
+      "From session publishing and the Teaching hub to Accueil check-in, Lead / Follow parity, room rentals, and payments on your website.",
     pillars: [
       {
         name: "Lead / Follow parity",
@@ -515,6 +524,12 @@ const en: Dictionary = {
         description:
           "Enrollment widgets, headless public API, and PayPal on your studio storefront — RitmoKit stays the engine.",
       },
+      {
+        name: "Teaching hub",
+        tagline: "\u201cSalsa L1 — Week 3, ready for tonight.\u201d",
+        description:
+          "Class plans, moves, choreography, and studio guides — video and step-by-step modules. New-teacher onboarding path and safety when needed. Same player, dance-native language.",
+      },
     ],
   },
   offer: {
@@ -549,7 +564,8 @@ const en: Dictionary = {
         features: [
           "1 studio / location",
           "Sessions grid, Accueil & room rentals",
-          "Basic Lead/Follow parity",
+          "Basic Lead / Follow parity",
+          "Teaching hub (class plans & studio guides)",
           "Integration Hub PayPal + widgets",
           "Public API",
         ],
@@ -577,6 +593,7 @@ const en: Dictionary = {
           "Parity engine + role waitlists",
           "Instructor payroll (hourly, flat, commission)",
           "$/m² Cockpit + heatmaps + slot promotion",
+          "Full Teaching hub (moves, choreography, video)",
           "Dance Agentics (confirmed proposals)",
           "Full API + widgets",
         ],
@@ -604,6 +621,7 @@ const en: Dictionary = {
           "Room matrix + private rentals",
           "Advanced parity + waitlists",
           "Agentics + churn risk watchlist",
+          "Multi-studio training catalog",
           "Financial analytics ($/m², profit/class)",
           "Priority support + CNESST guardrails",
         ],
@@ -643,7 +661,7 @@ const es: Dictionary = {
   meta: {
     title: "RitmoKit — El kit de operaciones para escuelas de danza",
     description:
-      "Sesiones, paridad Lead/Follow, Accueil en tableta, alquiler de salas, Cockpit $/m² y PayPal en tu sitio web — el kit de operaciones diseñado para escuelas de danza en Québec y más allá.",
+      "Sesiones, paridad Lead / Follow, Accueil, alquiler de salas, Cockpit $/m², Guía del profe y PayPal en tu sitio web — el kit de operaciones diseñado para escuelas de danza en Québec y más allá.",
   },
   nav: {
     problem: "El problema",
@@ -658,7 +676,7 @@ const es: Dictionary = {
     title: "Toma el control total de tu",
     titleAccent: "academia de baile.",
     subtitle:
-      "Sesiones, paridad Lead/Follow, Accueil en tableta, alquiler de salas, Cockpit $/m² y PayPal en tu sitio web — una sola fuente de verdad para tu escuela de danza.",
+      "Sesiones, paridad Lead / Follow, Accueil, alquiler de salas, Cockpit $/m², Guía del profe y PayPal en tu sitio web — una sola fuente de verdad para tu escuela de danza.",
     ctaPrimary: "Próximamente",
     ctaSecondary: "Ver precios",
     cockpit: {
@@ -743,10 +761,10 @@ const es: Dictionary = {
     ],
   },
   features: {
-    kicker: "Los 6 pilares",
+    kicker: "Los 7 pilares",
     title: "Todo lo que una escuela de danza moderna necesita.",
     subtitle:
-      "Desde la publicación de sesiones y alquiler de salas hasta Accueil en tableta, paridad Lead/Follow y pagos en tu sitio web.",
+      "Desde la publicación de sesiones y la Guía del profe hasta Accueil, paridad Lead / Follow, alquiler de salas y pagos en tu sitio web.",
     pillars: [
       {
         name: "Paridad Lead / Follow",
@@ -784,6 +802,12 @@ const es: Dictionary = {
         description:
           "Widgets de inscripción, API pública headless y PayPal en la vitrina de tu estudio — RitmoKit sigue siendo el motor.",
       },
+      {
+        name: "Guía del profe",
+        tagline: "«Salsa N1 — Semana 3, listo para esta noche.»",
+        description:
+          "Planes de clase, figuras, coreos y guías del estudio — video y pasos por módulo. Ruta de bienvenida al profe nuevo y seguridad si hace falta. Mismo reproductor, lenguaje de danza.",
+      },
     ],
   },
   offer: {
@@ -818,7 +842,8 @@ const es: Dictionary = {
         features: [
           "1 estudio / sede",
           "Grilla Sesiones, Accueil y alquiler de salas",
-          "Paridad Lead/Follow básica",
+          "Paridad Lead / Follow básica",
+          "Guía del profe (planes de clase y guías del estudio)",
           "Integration Hub PayPal + widgets",
           "API pública",
         ],
@@ -846,6 +871,7 @@ const es: Dictionary = {
           "Motor de paridad + waitlists por rol",
           "Nómina de instructores (hora, fijo, comisión)",
           "Cockpit $/m² + mapas de calor + promoción de horarios",
+          "Guía del profe completa (figuras, coreos, video)",
           "Dance Agentics (propuestas confirmadas)",
           "API + widgets completos",
         ],
@@ -873,6 +899,7 @@ const es: Dictionary = {
           "Matriz de salas + alquileres privados",
           "Paridad avanzada + listas de espera",
           "Agentics + lista de riesgo churn",
+          "Catálogo de formación multi-estudios",
           "Analítica financiera ($/m², beneficio/clase)",
           "Soporte prioritario + guardrails CNESST",
         ],

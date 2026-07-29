@@ -1,8 +1,8 @@
-import { CalendarDays, ClipboardCheck, Globe, Radar, Sparkles, TrendingUp } from "lucide-react";
+import { BookOpen, CalendarDays, ClipboardCheck, Globe, Radar, Sparkles, TrendingUp } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { Reveal } from "@/components/reveal";
 
-const ICONS = [Radar, ClipboardCheck, CalendarDays, TrendingUp, Sparkles, Globe];
+const ICONS = [Radar, ClipboardCheck, CalendarDays, TrendingUp, Sparkles, Globe, BookOpen];
 
 export function Features({ dict }: { dict: Dictionary["features"] }) {
   return (
