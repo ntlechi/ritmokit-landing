@@ -1,8 +1,8 @@
-import { CalendarDays, Grid3x3, Radar, TrendingUp } from "lucide-react";
+import { CalendarDays, ClipboardCheck, Globe, Radar, Sparkles, TrendingUp } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { Reveal } from "@/components/reveal";
 
-const ICONS = [Radar, Grid3x3, CalendarDays, TrendingUp];
+const ICONS = [Radar, ClipboardCheck, CalendarDays, TrendingUp, Sparkles, Globe];
 
 export function Features({ dict }: { dict: Dictionary["features"] }) {
   return (
@@ -16,7 +16,7 @@ export function Features({ dict }: { dict: Dictionary["features"] }) {
           <p className="mt-4 max-w-2xl text-base text-ink-muted sm:text-lg">{dict.subtitle}</p>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {dict.pillars.map((pillar, index) => {
             const Icon = ICONS[index];
             return (
