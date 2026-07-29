@@ -105,7 +105,7 @@ const fr: Dictionary = {
   meta: {
     title: "RitmoKit — Le kit d'opérations pour écoles de danse",
     description:
-      "Sessions, parité Lead/Follow, Accueil sur tablette, Cockpit $/m² et paiements PayPal sur votre site — le kit d'opérations conçu pour les écoles de danse au Québec et ailleurs.",
+      "Sessions, parité Lead/Follow, Accueil sur tablette, locations de salles, Cockpit $/m² et paiements PayPal sur votre site — le kit d'opérations conçu pour les écoles de danse au Québec et ailleurs.",
   },
   nav: {
     problem: "Le problème",
@@ -120,7 +120,7 @@ const fr: Dictionary = {
     title: "Reprenez le contrôle de votre",
     titleAccent: "studio de danse.",
     subtitle:
-      "Sessions, parité Lead/Follow, Accueil sur tablette, Cockpit $/m² et paiements PayPal sur votre site — une seule source de vérité pour votre école de danse.",
+      "Sessions, parité Lead/Follow, Accueil sur tablette, locations de salles, Cockpit $/m² et paiements PayPal sur votre site — une seule source de vérité pour votre école de danse.",
     ctaPrimary: "Bientôt disponible",
     ctaSecondary: "Voir les tarifs",
     cockpit: {
@@ -208,7 +208,7 @@ const fr: Dictionary = {
     kicker: "Les 6 piliers",
     title: "Tout ce qu'une école de danse moderne doit maîtriser.",
     subtitle:
-      "De la publication de session à l'Accueil sur tablette, en passant par la parité Lead/Follow et les paiements sur votre site.",
+      "De la publication de session aux locations de salles, l'Accueil sur tablette, la parité Lead/Follow et les paiements sur votre site.",
     pillars: [
       {
         name: "Parité Lead / Follow",
@@ -223,16 +223,16 @@ const fr: Dictionary = {
           "Cours du jour, parité en direct et check-in 1-clic. Votre équipe accueille les élèves au lieu de chercher des noms sur une feuille.",
       },
       {
-        name: "Grille Sessions",
-        tagline: "« Publiez une session en moins de 5 minutes. »",
+        name: "Sessions & locations de salles",
+        tagline: "« Cours, privés et locations — zéro conflit. »",
         description:
-          "Trimestres, conflits de salles et profs visibles d'un coup d'œil. Multi-salles natif avec capacité et buffers par studio.",
+          "Grille trimestrielle multi-salles : les cours bloquent les créneaux, les locations privées respectent les buffers. Conflits profs/salles visibles avant publication.",
       },
       {
         name: "Cockpit $/m²",
         tagline: "« Connaissez la valeur exacte de chaque pied carré. »",
         description:
-          "Revenus par m², taux d'occupation et plages sous-performantes — pour piloter votre rentabilité, pas seulement votre calendrier.",
+          "Revenus par m², heatmaps d'occupation et plages mortes — promouvez un créneau libre pour un privé ou une location de salle directement depuis le cockpit.",
       },
       {
         name: "Dance Agentics",
@@ -279,7 +279,7 @@ const fr: Dictionary = {
         },
         features: [
           "1 studio / emplacement",
-          "Grille Sessions + Accueil tablette",
+          "Grille Sessions, Accueil & locations de salles",
           "Parité Lead/Follow de base",
           "Integration Hub PayPal + widgets",
           "API publique",
@@ -307,7 +307,7 @@ const fr: Dictionary = {
           "Jusqu'à 3 studios / emplacements",
           "Moteur de parité + waitlists par rôle",
           "Paie instructeurs (horaire, forfait, commission)",
-          "Cockpit $/m² + heatmaps",
+          "Cockpit $/m² + heatmaps + promotion de créneaux",
           "Dance Agentics (propositions confirmées)",
           "API + widgets complets",
         ],
@@ -332,7 +332,7 @@ const fr: Dictionary = {
         },
         features: [
           "5+ studios / multi-salles",
-          "Matrice salles en temps réel",
+          "Matrice salles + locations privées",
           "Parité avancée + listes d'attente",
           "Agentics + liste de risque churn",
           "Analytique financière ($/m², profit/cours)",
@@ -374,7 +374,7 @@ const en: Dictionary = {
   meta: {
     title: "RitmoKit — The operations kit for dance schools",
     description:
-      "Sessions, Lead/Follow parity, tablet Accueil check-in, $/m² Cockpit, and PayPal on your website — the operations kit built for dance schools in Québec and beyond.",
+      "Sessions, Lead/Follow parity, tablet Accueil check-in, room rentals, $/m² Cockpit, and PayPal on your website — the operations kit built for dance schools in Québec and beyond.",
   },
   nav: {
     problem: "The problem",
@@ -389,7 +389,7 @@ const en: Dictionary = {
     title: "Take back control of your",
     titleAccent: "dance studio.",
     subtitle:
-      "Sessions, Lead/Follow parity, tablet Accueil check-in, $/m² Cockpit, and PayPal on your website — one source of truth for your dance school.",
+      "Sessions, Lead/Follow parity, tablet Accueil check-in, room rentals, $/m² Cockpit, and PayPal on your website — one source of truth for your dance school.",
     ctaPrimary: "Coming soon",
     ctaSecondary: "See pricing",
     cockpit: {
@@ -477,7 +477,7 @@ const en: Dictionary = {
     kicker: "The 6 core pillars",
     title: "Everything a modern dance school needs to run.",
     subtitle:
-      "From session publishing to tablet Accueil check-in, Lead/Follow parity, and payments on your website.",
+      "From session publishing and room rentals to tablet Accueil check-in, Lead/Follow parity, and payments on your website.",
     pillars: [
       {
         name: "Lead / Follow parity",
@@ -492,16 +492,16 @@ const en: Dictionary = {
           "Today's classes, live parity, and 1-click check-in. Your team greets students instead of scanning a paper list.",
       },
       {
-        name: "Sessions grid",
-        tagline: "\u201cPublish a session in under 5 minutes.\u201d",
+        name: "Sessions & room rentals",
+        tagline: "\u201cClasses, privates, and rentals — zero conflicts.\u201d",
         description:
-          "Quarters, room conflicts, and instructor clashes at a glance. Native multi-room with capacity and buffers per studio.",
+          "Multi-room quarterly grid: classes block slots, private rentals respect buffers. Instructor and room clashes visible before you publish.",
       },
       {
         name: "$/m² Cockpit",
         tagline: "\u201cKnow the exact dollar value of every square foot.\u201d",
         description:
-          "Revenue per m², occupancy rates, and underperforming slots — so you run profitability, not just a calendar.",
+          "Revenue per m², occupancy heatmaps, and dead slots — promote an open slot for a private lesson or room rental right from the cockpit.",
       },
       {
         name: "Dance Agentics",
@@ -548,7 +548,7 @@ const en: Dictionary = {
         },
         features: [
           "1 studio / location",
-          "Sessions grid + tablet Accueil",
+          "Sessions grid, Accueil & room rentals",
           "Basic Lead/Follow parity",
           "Integration Hub PayPal + widgets",
           "Public API",
@@ -576,7 +576,7 @@ const en: Dictionary = {
           "Up to 3 studios / locations",
           "Parity engine + role waitlists",
           "Instructor payroll (hourly, flat, commission)",
-          "$/m² Cockpit + heatmaps",
+          "$/m² Cockpit + heatmaps + slot promotion",
           "Dance Agentics (confirmed proposals)",
           "Full API + widgets",
         ],
@@ -601,7 +601,7 @@ const en: Dictionary = {
         },
         features: [
           "5+ studios / multi-room",
-          "Real-time room matrix",
+          "Room matrix + private rentals",
           "Advanced parity + waitlists",
           "Agentics + churn risk watchlist",
           "Financial analytics ($/m², profit/class)",
@@ -643,7 +643,7 @@ const es: Dictionary = {
   meta: {
     title: "RitmoKit — El kit de operaciones para escuelas de danza",
     description:
-      "Sesiones, paridad Lead/Follow, Accueil en tableta, Cockpit $/m² y PayPal en tu sitio web — el kit de operaciones diseñado para escuelas de danza en Québec y más allá.",
+      "Sesiones, paridad Lead/Follow, Accueil en tableta, alquiler de salas, Cockpit $/m² y PayPal en tu sitio web — el kit de operaciones diseñado para escuelas de danza en Québec y más allá.",
   },
   nav: {
     problem: "El problema",
@@ -658,7 +658,7 @@ const es: Dictionary = {
     title: "Toma el control total de tu",
     titleAccent: "academia de baile.",
     subtitle:
-      "Sesiones, paridad Lead/Follow, Accueil en tableta, Cockpit $/m² y PayPal en tu sitio web — una sola fuente de verdad para tu escuela de danza.",
+      "Sesiones, paridad Lead/Follow, Accueil en tableta, alquiler de salas, Cockpit $/m² y PayPal en tu sitio web — una sola fuente de verdad para tu escuela de danza.",
     ctaPrimary: "Próximamente",
     ctaSecondary: "Ver precios",
     cockpit: {
@@ -746,7 +746,7 @@ const es: Dictionary = {
     kicker: "Los 6 pilares",
     title: "Todo lo que una escuela de danza moderna necesita.",
     subtitle:
-      "Desde la publicación de sesiones hasta Accueil en tableta, paridad Lead/Follow y pagos en tu sitio web.",
+      "Desde la publicación de sesiones y alquiler de salas hasta Accueil en tableta, paridad Lead/Follow y pagos en tu sitio web.",
     pillars: [
       {
         name: "Paridad Lead / Follow",
@@ -761,16 +761,16 @@ const es: Dictionary = {
           "Clases del día, paridad en vivo y check-in en 1 clic. Tu equipo recibe a los alumnos en lugar de escanear una hoja.",
       },
       {
-        name: "Grilla de Sesiones",
-        tagline: "«Publica una sesión en menos de 5 minutos.»",
+        name: "Sesiones y alquiler de salas",
+        tagline: "«Clases, privados y alquileres — cero conflictos.»",
         description:
-          "Trimestres, conflictos de salas e instructores de un vistazo. Multi-salas nativo con capacidad y buffers por estudio.",
+          "Grilla trimestral multi-salas: las clases bloquean horarios, los alquileres privados respetan buffers. Conflictos de profs/salas visibles antes de publicar.",
       },
       {
         name: "Cockpit $/m²",
         tagline: "«Conoce el valor exacto de cada metro cuadrado.»",
         description:
-          "Ingresos por m², tasas de ocupación y horarios de bajo rendimiento — para pilotar rentabilidad, no solo un calendario.",
+          "Ingresos por m², mapas de calor de ocupación y horarios muertos — promueve un hueco libre para clase privada o alquiler de sala desde el cockpit.",
       },
       {
         name: "Dance Agentics",
@@ -817,7 +817,7 @@ const es: Dictionary = {
         },
         features: [
           "1 estudio / sede",
-          "Grilla Sesiones + Accueil en tableta",
+          "Grilla Sesiones, Accueil y alquiler de salas",
           "Paridad Lead/Follow básica",
           "Integration Hub PayPal + widgets",
           "API pública",
@@ -845,7 +845,7 @@ const es: Dictionary = {
           "Hasta 3 estudios / sedes",
           "Motor de paridad + waitlists por rol",
           "Nómina de instructores (hora, fijo, comisión)",
-          "Cockpit $/m² + mapas de calor",
+          "Cockpit $/m² + mapas de calor + promoción de horarios",
           "Dance Agentics (propuestas confirmadas)",
           "API + widgets completos",
         ],
@@ -870,7 +870,7 @@ const es: Dictionary = {
         },
         features: [
           "5+ estudios / multi-salas",
-          "Matriz de salas en tiempo real",
+          "Matriz de salas + alquileres privados",
           "Paridad avanzada + listas de espera",
           "Agentics + lista de riesgo churn",
           "Analítica financiera ($/m², beneficio/clase)",
