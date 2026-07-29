@@ -105,7 +105,7 @@ const fr: Dictionary = {
   meta: {
     title: "RitmoKit — Le kit d'opérations pour écoles de danse",
     description:
-      "Sessions, parité Lead/Follow, Accueil sur tablette, locations de salles, Cockpit $/m² et paiements PayPal sur votre site — le kit d'opérations conçu pour les écoles de danse au Québec et ailleurs.",
+      "Sessions, parité Lead / Follow, Accueil sur tablette, locations de salles, Cockpit $/m² et paiements PayPal sur votre site — le kit d'opérations conçu pour les écoles de danse au Québec et ailleurs.",
   },
   nav: {
     problem: "Le problème",
@@ -120,7 +120,7 @@ const fr: Dictionary = {
     title: "Reprenez le contrôle de votre",
     titleAccent: "studio de danse.",
     subtitle:
-      "Sessions, parité Lead/Follow, Accueil sur tablette, locations de salles, Cockpit $/m² et paiements PayPal sur votre site — une seule source de vérité pour votre école de danse.",
+      "Sessions, parité Lead / Follow, Accueil sur tablette, locations de salles, Cockpit $/m² et paiements PayPal sur votre site — une seule source de vérité pour votre école de danse.",
     ctaPrimary: "Bientôt disponible",
     ctaSecondary: "Voir les tarifs",
     cockpit: {
@@ -156,9 +156,9 @@ const fr: Dictionary = {
           "Votre équipe cherche des noms sur une feuille pendant que les élèves s'impatientent — au lieu d'accueillir et de faire tourner la salle.",
       },
       {
-        title: "Le déséquilibre lead / follow",
+        title: "Le déséquilibre Lead / Follow",
         description:
-          "Refuser des follows motivés parce qu'il manque des leads — ou découvrir le déséquilibre seulement quand la porte du studio s'ouvre.",
+          "Refuser des Follows motivés parce qu'il manque des Leads — ou découvrir le déséquilibre seulement quand la porte du studio s'ouvre.",
       },
       {
         title: "Double saisie site web + cahier",
@@ -186,7 +186,7 @@ const fr: Dictionary = {
       },
       {
         before: "Déséquilibre découvert le soir",
-        afterTitle: "Parité Lead/Follow + waitlists par rôle",
+        afterTitle: "Parité Lead / Follow + waitlists par rôle",
         afterDescription:
           "Quotas en temps réel, listes d'attente par rôle et promotion auto quand un Lead se libère.",
       },
@@ -194,7 +194,7 @@ const fr: Dictionary = {
         before: "Feuille papier à l'Accueil",
         afterTitle: "Accueil tablette — présence en 1 clic",
         afterDescription:
-          "Cours du jour, parité en direct et check-in instantané — votre équipe accueille au lieu de chercher des noms.",
+          "Cours du jour, parité Lead / Follow en direct et check-in instantané — votre équipe accueille au lieu de chercher des noms.",
       },
       {
         before: "Churn découvert trop tard",
@@ -208,7 +208,7 @@ const fr: Dictionary = {
     kicker: "Les 6 piliers",
     title: "Tout ce qu'une école de danse moderne doit maîtriser.",
     subtitle:
-      "De la publication de session aux locations de salles, l'Accueil sur tablette, la parité Lead/Follow et les paiements sur votre site.",
+      "De la publication de session aux locations de salles, l'Accueil sur tablette, la parité Lead / Follow et les paiements sur votre site.",
     pillars: [
       {
         name: "Parité Lead / Follow",
@@ -220,7 +220,7 @@ const fr: Dictionary = {
         name: "Accueil sur tablette",
         tagline: "« La file du lundi soir, réglée en un tap. »",
         description:
-          "Cours du jour, parité en direct et check-in 1-clic. Votre équipe accueille les élèves au lieu de chercher des noms sur une feuille.",
+          "Cours du jour, parité Lead / Follow en direct et check-in 1-clic. Votre équipe accueille les élèves au lieu de chercher des noms sur une feuille.",
       },
       {
         name: "Sessions & locations de salles",
@@ -280,7 +280,7 @@ const fr: Dictionary = {
         features: [
           "1 studio / emplacement",
           "Grille Sessions, Accueil & locations de salles",
-          "Parité Lead/Follow de base",
+          "Parité Lead / Follow de base",
           "Integration Hub PayPal + widgets",
           "API publique",
         ],
@@ -305,7 +305,7 @@ const fr: Dictionary = {
         },
         features: [
           "Jusqu'à 3 studios / emplacements",
-          "Moteur de parité + waitlists par rôle",
+          "Moteur de parité Lead / Follow + waitlists par rôle",
           "Paie instructeurs (horaire, forfait, commission)",
           "Cockpit $/m² + heatmaps + promotion de créneaux",
           "Dance Agentics (propositions confirmées)",
@@ -333,7 +333,7 @@ const fr: Dictionary = {
         features: [
           "5+ studios / multi-salles",
           "Matrice salles + locations privées",
-          "Parité avancée + listes d'attente",
+          "Parité Lead / Follow avancée + listes d'attente",
           "Agentics + liste de risque churn",
           "Analytique financière ($/m², profit/cours)",
           "Support prioritaire + garde-fous CNESST",
