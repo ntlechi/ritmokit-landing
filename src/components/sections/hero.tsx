@@ -6,7 +6,6 @@ import { Reveal } from "@/components/reveal";
 export function Hero({ dict }: { dict: Dictionary["hero"] }) {
   return (
     <section className="relative overflow-hidden pb-20 pt-32 sm:pb-28 sm:pt-40">
-      {/* Ambient studio glow */}
       <div
         className="aurora left-[-10%] top-[-15%] h-[480px] w-[480px]"
         style={{ background: "var(--accent-from)" }}
@@ -41,14 +40,14 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
 
           <Reveal delay={0.24}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <span
-                aria-disabled="true"
-                className="soon-button inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold"
-              >
-                {dict.ctaPrimary}
-              </span>
               <a
                 href="#offer"
+                className="glow-button inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold text-white"
+              >
+                {dict.ctaPrimary}
+              </a>
+              <a
+                href="#demo"
                 className="ghost-button inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold"
               >
                 {dict.ctaSecondary}
@@ -61,7 +60,7 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
               {dict.stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="sr-only">{stat.label}</dt>
-                  <dd className="font-display text-2xl font-bold sm:text-3xl">
+                  <dd className="font-display text-xl font-bold sm:text-2xl">
                     <span className="gradient-text">{stat.value}</span>
                   </dd>
                   <p className="mt-1 text-xs leading-snug text-ink-faint">{stat.label}</p>

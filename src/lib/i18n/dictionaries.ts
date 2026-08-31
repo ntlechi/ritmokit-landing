@@ -37,6 +37,9 @@ export interface Dictionary {
     };
     stats: Array<{ value: string; label: string }>;
   };
+  proof: {
+    items: Array<{ value: string; label: string }>;
+  };
   problem: {
     kicker: string;
     title: string;
@@ -55,6 +58,8 @@ export interface Dictionary {
     title: string;
     subtitle: string;
     pillars: Array<{ name: string; tagline: string; description: string }>;
+    moreTitle: string;
+    more: Array<{ name: string; description: string }>;
   };
   offer: {
     kicker: string;
@@ -88,6 +93,31 @@ export interface Dictionary {
       poweredBy: string;
     };
   };
+  demo: {
+    kicker: string;
+    title: string;
+    subtitle: string;
+    name: string;
+    studio: string;
+    email: string;
+    city: string;
+    students: string;
+    submit: string;
+    sending: string;
+    success: string;
+    error: string;
+  };
+  checkout: {
+    redirecting: string;
+    error: string;
+    missingKey: string;
+    successTitle: string;
+    successBody: string;
+    successCta: string;
+    cancelTitle: string;
+    cancelBody: string;
+    cancelCta: string;
+  };
   finalCta: {
     title: string;
     subtitle: string;
@@ -98,32 +128,34 @@ export interface Dictionary {
     poweredBy: string;
     languages: string;
     contact: string;
+    privacy: string;
+    terms: string;
     rights: string;
   };
 }
 
 const fr: Dictionary = {
   meta: {
-    title: "RitmoKit — Le kit d'opérations pour écoles de danse",
+    title: "RitmoKit — Parité Lead / Follow pour écoles de danse",
     description:
-      "Sessions, parité Lead / Follow, Accueil, locations de salles, Cockpit $/m², Cahier du prof, Agentics et PayPal — le kit d'opérations pour écoles de danse au Québec.",
+      "Inscriptions sur votre site, sièges Lead / Follow en direct, couples, Interac et Stripe, Accueil tablette. Le kit d'opérations pour écoles de danse au Québec.",
   },
   nav: {
     problem: "Le problème",
-    features: "Fonctionnalités",
+    features: "Comment",
     pricing: "Tarifs",
-    bookDemo: "Bientôt disponible",
+    bookDemo: "Réserver 20 min",
     themeToggle: "Changer de thème",
     langSwitcher: "Changer de langue",
   },
   hero: {
-    badge: "Le kit d'opérations pour écoles de danse",
-    title: "Reprenez le contrôle de votre",
-    titleAccent: "studio de danse.",
+    badge: "Fait pour la salsa, la bachata et la kizomba — pas pour un gym",
+    title: "Arrêtez de refuser des Follows",
+    titleAccent: "faute de Leads.",
     subtitle:
-      "Sessions, parité Lead / Follow, Accueil, locations de salles, Cockpit $/m², Cahier du prof et PayPal sur votre site — une seule source de vérité. Phase A déployée avec un studio pilote au Québec.",
-    ctaPrimary: "Bientôt disponible",
-    ctaSecondary: "Voir les tarifs",
+      "Sièges Lead / Follow en direct sur votre propre site. Les couples s'inscrivent ensemble. Interac, Stripe ou PayPal tombent dans le même registre que l'Accueil. Vous gardez votre vitrine — RitmoKit est le moteur.",
+    ctaPrimary: "S'abonner — 79 $ / mois",
+    ctaSecondary: "Réserver une visite de 20 min",
     cockpit: {
       title: "Cockpit Studio",
       live: "En direct",
@@ -140,275 +172,284 @@ const fr: Dictionary = {
       },
     },
     stats: [
-      { value: "< 5 min", label: "pour publier une session" },
-      { value: "FR · EN · ES", label: "trilingue natif" },
-      { value: "CA", label: "données hébergées au Canada" },
+      { value: "Lead / Follow", label: "quotas et waitlists par rôle" },
+      { value: "Votre site", label: "API + syllabus semaine N" },
+      { value: "CA", label: "Interac · Stripe · PayPal" },
+    ],
+  },
+  proof: {
+    items: [
+      { value: "1 clic", label: "Présent à l'Accueil" },
+      { value: "2 sièges", label: "Couple, un seul paiement" },
+      { value: "FR · EN · ES", label: "Trilingue natif" },
+      { value: "Québec", label: "Construit avec une école pilote" },
     ],
   },
   problem: {
     kicker: "Le problème",
     title:
-      "Vous avez ouvert un studio pour enseigner la passion. Pas pour passer vos soirées sur Excel et WhatsApp.",
-    subtitle: "Les 4 tueurs silencieux qui dévorent les profits de votre studio :",
+      "Vous avez ouvert un studio pour enseigner. Pas pour passer vos soirées sur Excel et WhatsApp.",
+    subtitle: "Les 4 tueurs qui vident la salle et la caisse :",
     killers: [
       {
         title: "La file d'Accueil à 18 h 55",
         description:
-          "Votre équipe cherche des noms sur une feuille pendant que les élèves s'impatientent — au lieu d'accueillir et de faire tourner la salle.",
+          "L'équipe cherche des noms sur une feuille pendant que les élèves s'impatientent — au lieu d'accueillir et de faire tourner la salle.",
       },
       {
         title: "Le déséquilibre Lead / Follow",
         description:
-          "Refuser des Follows motivés parce qu'il manque des Leads — ou découvrir le déséquilibre seulement quand la porte du studio s'ouvre.",
+          "Refuser des Follows motivés parce qu'il manque des Leads — ou découvrir le trou seulement quand la porte s'ouvre.",
       },
       {
-        title: "Double saisie site web + cahier",
+        title: "Double saisie site + cahier",
         description:
-          "Inscriptions sur le site, puis ressaisie dans Excel ou Messenger. Deux sources de vérité qui se contredisent chaque semaine.",
+          "Inscriptions sur le site, puis ressaisie dans Excel ou Messenger. Deux vérités qui se contredisent chaque semaine.",
       },
       {
-        title: "Des chiffres de rentabilité incohérents",
+        title: "L'argent qui n'arrive pas",
         description:
-          "Revenus au feeling, Excel et caisse qui ne concordent pas — impossible de savoir quel cours ou tier (régulier, étudiant, couple) rapporte vraiment.",
+          "Interac sans code, PayPal d'un côté, caisse de l'autre. Impossible de savoir qui a payé avant le cours.",
       },
     ],
   },
   transformation: {
-    kicker: "La transformation",
-    title: "L'expérience élégante. L'automatisation totale.",
-    before: "Ce que vous avez aujourd'hui",
-    after: "Ce que RitmoKit vous donne",
+    kicker: "Ce qui change lundi",
+    title: "Votre site reste le vôtre. Le registre devient un seul.",
+    before: "Aujourd'hui",
+    after: "Avec RitmoKit",
     rows: [
       {
         before: "Double saisie site web + Excel",
-        afterTitle: "API publique + PayPal sur votre site",
+        afterTitle: "Inscriptions sur votre site",
         afterDescription:
-          "Inscriptions sur votre vitrine web, paiements confirmés dans RitmoKit — une seule source de vérité.",
+          "L'élève s'inscrit chez vous. RitmoKit reçoit le siège, le paiement et la semaine du syllabus.",
       },
       {
         before: "Déséquilibre découvert le soir",
-        afterTitle: "Parité Lead / Follow + waitlists par rôle",
+        afterTitle: "Parité + couples",
         afterDescription:
-          "Quotas en temps réel, listes d'attente par rôle et promotion auto quand un Lead se libère.",
+          "Waitlist par rôle. Un couple (Lead + Follow) s'inscrit ensemble sans casser l'équilibre.",
       },
       {
         before: "Feuille papier à l'Accueil",
-        afterTitle: "Accueil tablette — présence en 1 clic",
+        afterTitle: "Tablette — présent en 1 tap",
         afterDescription:
-          "Cours du jour, parité Lead / Follow en direct et check-in instantané — votre équipe accueille au lieu de chercher des noms.",
+          "Cours du soir, parité en direct, payé ou à encaisser. La porte refuse un rôle déjà plein.",
       },
       {
-        before: "Churn découvert trop tard",
-        afterTitle: "Liste de risque + Dance Agentics",
+        before: "Interac dans le chaos du Messenger",
+        afterTitle: "Interac, Stripe ou PayPal",
         afterDescription:
-          "Waitlist et impayés : actions automatiques. Relances churn et soft capacity : vous confirmez ou ignorez.",
+          "Un code de réservation, un checkout carte, ou PayPal — le billet s'active au même endroit.",
       },
     ],
   },
   features: {
-    kicker: "Les 8 piliers",
-    title: "Tout ce qu'une école de danse moderne doit maîtriser.",
+    kicker: "Trois raisons de quitter FLiiP",
+    title: "Ce qu'un gym OS ne fera jamais pour une école de danse.",
     subtitle:
-      "Du Cahier du prof au Cockpit $/m² — ce que RitmoKit livre aujourd'hui dans l'app, pas un agenda générique.",
+      "Le reste (calendrier, cahier du prof, multi-salles) est là. Ceci, c'est pourquoi on existe.",
     pillars: [
       {
         name: "Parité Lead / Follow",
-        tagline: "« Chaque rôle compte. »",
+        tagline: "Chaque rôle a un siège.",
         description:
-          "Quotas en temps réel, waitlists par rôle et promotion quand une place se libère — visible dans Accueil, Sessions et le Cockpit.",
+          "Quotas en direct, waitlists par rôle, couples qui débloquent une place, et un conseiller d'inscription qui propose le bon soir.",
       },
       {
-        name: "Accueil",
-        tagline: "« Un tap, c'est présent. »",
+        name: "Accueil tablette",
+        tagline: "Un tap, c'est présent.",
         description:
-          "Cours du soir, parité Lead / Follow, statut payé ou à encaisser, listes d'attente — check-in en 1 clic sur tablette à l'entrée.",
+          "Recherche 3 lettres, soirée, walk-in bloqué si le rôle est plein. Votre équipe accueille au lieu de chercher des noms.",
       },
       {
-        name: "Sessions & Calendrier studio",
-        tagline: "« Une grille, zéro double réservation. »",
+        name: "Votre site, notre moteur",
+        tagline: "Pas un nouveau site à gérer.",
         description:
-          "Trimestres, conflits prof/salle en rouge, calendrier multi-vues et locations privées avec buffers entre réservations.",
+          "API publique, syllabus de la semaine, Interac / Stripe / PayPal. La vitrine reste la vôtre.",
       },
-      {
-        name: "Cockpit $/m²",
-        tagline: "« Des revenus recouvrables avec PayPal. »",
-        description:
-          "Yield par tier (régulier, étudiant, couple), profit par cours, heatmaps d'occupation et liste de risque churn — pas des chiffres au feeling.",
-      },
-      {
-        name: "Dance Agentics",
-        tagline: "« RitmoKit propose. Vous confirmez. »",
-        description:
-          "Waitlist et impayés se gèrent seuls. Soft capacity et relances churn : suggestions sur Accueil et Sessions — vous validez avant l'envoi.",
-      },
-      {
-        name: "Paiement en ligne",
-        tagline: "« Le PayPal de votre école, pas le nôtre. »",
-        description:
-          "Integration Hub dans Réglages → Intégrations : API publique headless, checkout PayPal et mode test → réel sur votre vitrine web.",
-      },
-      {
-        name: "Cahier du prof",
-        tagline: "« Salsa N1 — Semaine 3, prêt pour ce soir. »",
-        description:
-          "Plans de cours, figures, chorés, guides studio et vidéo — parcours Accueil nouveau prof et sécurité si besoin. Plus de fiches « recette ».",
-      },
-      {
-        name: "Équipe & conformité",
-        tagline: "« Instructeurs, Accueil, direction — un seul OS. »",
-        description:
-          "Quarts staff avec garde-fous CNESST, export paie Nethris/Payworks, convention de travail, Pulse culture et répertoire Élèves.",
-      },
+    ],
+    moreTitle: "Aussi dans chaque forfait Studio",
+    more: [
+      { name: "Sessions & salles", description: "Trimestres, conflits prof/salle, locations avec buffers." },
+      { name: "Cahier du prof", description: "Semaine N, figures Lead / Follow, vidéo pour ce soir." },
+      { name: "Équipe", description: "Invitations, rôles, changement d'école dans une même marque." },
     ],
   },
   offer: {
     kicker: "Tarifs",
-    title: "Des forfaits clairs. Du solo à l'entreprise multi-salles.",
+    title: "La parité n'est pas un extra. Elle est dans Studio.",
     subtitle:
-      "Tarifs indicatifs pour l'abonnement self-serve à venir. Aujourd'hui : déploiement Phase A pilote ou configuration clé en main avec Arsitech.",
+      "Paiement Stripe — vous êtes débité aujourd'hui, on ouvre votre école ensuite. Annuel = 2 mois offerts.",
     billing: {
       monthly: "Mensuel",
       annual: "Annuel",
-      recommended: "Recommandé",
+      recommended: "2 mois offerts",
     },
-    trialBadge: "Abonnement self-serve à venir",
+    trialBadge: "Paiement sécurisé par Stripe",
     footnote:
-      "Tarifs indicatifs — produit en pilote fondateur au Québec. L'essai gratuit et la facturation en ligne arrivent avec l'ouverture publique.",
+      "Prix en CAD + taxes. Studio inclut parité, couples, Accueil, Interac/Stripe/PayPal et l'API publique. On vous écrit dans les 24 h pour brancher votre saison.",
     plans: [
       {
         id: "solo",
-        name: "Solo / Studio",
-        tagline: "1 studio · jusqu'à 150 élèves",
+        name: "Studio",
+        tagline: "1 école · jusqu'à 150 élèves",
         badge: null,
         highlighted: false,
         monthly: {
           price: "79 $",
           suffix: "/ mois + tx",
-          note: "Sans engagement, annulation à tout moment",
+          note: "Sans engagement",
         },
         annual: {
           price: "59 $",
           suffix: "/ mois + tx",
-          note: "Facturé annuellement",
+          note: "Facturé 708 $ / an",
           savings: "Économisez 240 $ / an",
         },
         features: [
-          "1 studio / emplacement",
-          "Grille Sessions, Accueil, Élèves & locations",
-          "Parité Lead / Follow de base",
-          "Cahier du prof (plans de cours & guides studio)",
-          "Integration Hub PayPal + API publique",
+          "Parité Lead / Follow + waitlists par rôle",
+          "Inscription couple (2 sièges, 1 paiement)",
+          "Accueil tablette + walk-in intelligent",
+          "API publique + syllabus sur votre site",
+          "Interac, Stripe ou PayPal — votre compte",
+          "Cahier du prof et calendrier salles",
         ],
-        cta: "Bientôt disponible",
+        cta: "S'abonner avec Stripe",
       },
       {
         id: "pro",
-        name: "Pro / Multi-Studio",
-        tagline: "Jusqu'à 3 studios · parité & équipe",
-        badge: "Populaire",
+        name: "Multi",
+        tagline: "Jusqu'à 3 écoles",
+        badge: "Le plus choisi",
         highlighted: true,
         monthly: {
           price: "199 $",
           suffix: "/ mois + tx",
-          note: "Sans engagement, annulation à tout moment",
+          note: "Sans engagement",
         },
         annual: {
           price: "149 $",
           suffix: "/ mois + tx",
-          note: "Facturé annuellement",
+          note: "Facturé 1 788 $ / an",
           savings: "Économisez 600 $ / an",
         },
         features: [
-          "Jusqu'à 3 studios / emplacements",
-          "Moteur de parité Lead / Follow + waitlists par rôle",
-          "Export paie équipe (Nethris / Payworks) + quarts CNESST",
-          "Cockpit $/m² + heatmaps + promotion de créneaux",
-          "Cahier du prof complet (figures, chorés, vidéo)",
-          "Dance Agentics (waitlist & impayés auto)",
-          "API publique complète",
+          "Tout Studio, sur 3 emplacements",
+          "Changement d'école pour la direction",
+          "Cockpit revenus + heatmaps",
+          "Export paie équipe",
+          "Relances waitlist et impayés",
         ],
-        cta: "Bientôt disponible",
+        cta: "S'abonner avec Stripe",
       },
       {
         id: "entreprise",
-        name: "Entreprise / Multi-Salles",
-        tagline: "5+ studios · opérations avancées",
+        name: "Réseau",
+        tagline: "5+ écoles",
         badge: "Multi-salles",
         highlighted: false,
         monthly: {
           price: "298 $",
           suffix: "/ mois + tx",
-          note: "Licence réseau — valeur régulière affichée",
+          note: "Licence réseau",
         },
         annual: {
           price: "224 $",
           suffix: "/ mois + tx",
-          note: "Facturé annuellement",
+          note: "Facturé 2 688 $ / an",
           savings: "Économisez 888 $ / an",
         },
         features: [
-          "5+ studios / multi-salles",
-          "Matrice salles + locations privées",
-          "Parité Lead / Follow avancée + listes d'attente",
-          "Agentics + liste de risque churn",
-          "Catalogue formation multi-studios",
-          "Analytique financière ($/m², profit/cours)",
-          "Support prioritaire + garde-fous CNESST",
+          "Tout Multi, 5+ emplacements",
+          "Matrice de salles + locations",
+          "Analytique réseau",
+          "Support prioritaire",
         ],
-        cta: "Bientôt disponible",
+        cta: "S'abonner avec Stripe",
       },
     ],
     agency: {
-      tag: "Configuration sur mesure (optionnelle)",
-      name: "Accompagnement Arsitech",
+      tag: "Déploiement clé en main (optionnel)",
+      name: "On branche votre site pour vous",
       price: "Sur devis",
       description:
-        "Pour les studios qui préfèrent un déploiement clé en main plutôt que l'intégration libre-service.",
+        "Si vous préférez qu'on configure saison, CORS et checkout plutôt que le self-serve.",
       features: [
-        "Configuration personnalisée et intégration RitmoKit complète",
-        "Site web Next.js sur mesure (optionnel)",
-        "Mise en place domaine, hébergement et paiements",
+        "Saison ACTIVE + origines du site",
+        "Stripe / PayPal / Interac branchés",
+        "Site Next.js sur mesure (optionnel)",
       ],
-      cta: "Demander une soumission",
-      poweredBy: "Propulsé par Arsitech",
+      cta: "Écrire à l'équipe",
+      poweredBy: "Accompagnement Arsitech",
     },
   },
+  demo: {
+    kicker: "Visite studio",
+    title: "20 minutes. Votre grille, pas une démo générique.",
+    subtitle:
+      "Dites-nous l'école et la ville. On vous montre la parité, l'Accueil et le checkout sur vos vrais horaires.",
+    name: "Votre nom",
+    studio: "Nom de l'école",
+    email: "Courriel",
+    city: "Ville",
+    students: "Élèves approx. (optionnel)",
+    submit: "Demander la visite",
+    sending: "Envoi…",
+    success: "Reçu. On vous écrit dans les 24 h pour caler 20 minutes.",
+    error: "Envoi impossible — écrivez-nous à info@ritmokit.com.",
+  },
+  checkout: {
+    redirecting: "Ouverture de Stripe…",
+    error: "Paiement indisponible pour le moment. Réservez une visite ou écrivez à info@ritmokit.com.",
+    missingKey: "Stripe n'est pas encore branché sur ce site. Réservez une visite — on active votre école à la main.",
+    successTitle: "Paiement reçu. On ouvre votre école.",
+    successBody:
+      "Stripe nous a confirmé l'abonnement. Vous recevrez un courriel dans les 24 h pour brancher saison, site et Accueil.",
+    successCta: "Retour à l'accueil",
+    cancelTitle: "Paiement annulé",
+    cancelBody: "Aucun montant n'a été débité. Vous pouvez réessayer ou réserver une visite de 20 min.",
+    cancelCta: "Revoir les tarifs",
+  },
   finalCta: {
-    title: "Prêt à faire passer votre studio à l'étape supérieure ?",
-    subtitle: "Rejoignez les studios qui ont remplacé le chaos par un cockpit.",
-    cta: "Voir les tarifs",
+    title: "Lundi soir, la file à 18 h 55 n'a plus à exister.",
+    subtitle: "Abonnez-vous, ou montrez-nous votre grille en 20 minutes.",
+    cta: "Réserver une visite",
   },
   footer: {
     tagline: "Le kit d'opérations pour écoles de danse.",
     poweredBy: "Propulsé par",
     languages: "Trilingue",
-    contact: "Contact & support clientèle",
+    contact: "info@ritmokit.com",
+    privacy: "Confidentialité",
+    terms: "Conditions",
     rights: "Tous droits réservés.",
   },
 };
 
 const en: Dictionary = {
   meta: {
-    title: "RitmoKit — The operations kit for dance schools",
+    title: "RitmoKit — Lead / Follow parity for dance schools",
     description:
-      "Sessions, Lead / Follow parity, Accueil, room rentals, $/m² Cockpit, Teaching hub, Agentics, and PayPal — the operations kit for dance schools in Québec.",
+      "Enroll on your own website. Live Lead / Follow seats, couples, Interac and Stripe, tablet door. The operations kit for dance schools in Québec.",
   },
   nav: {
     problem: "The problem",
-    features: "Features",
+    features: "How it works",
     pricing: "Pricing",
-    bookDemo: "Coming soon",
+    bookDemo: "Book 20 min",
     themeToggle: "Toggle theme",
     langSwitcher: "Change language",
   },
   hero: {
-    badge: "The operations kit for dance schools",
-    title: "Take back control of your",
-    titleAccent: "dance studio.",
+    badge: "Built for salsa, bachata, and kizomba — not a gym",
+    title: "Stop turning Follows away",
+    titleAccent: "because you are short on Leads.",
     subtitle:
-      "Sessions, Lead / Follow parity, Accueil, room rentals, $/m² Cockpit, Teaching hub, and PayPal on your website — one source of truth. Phase A live with a pilot studio in Québec.",
-    ctaPrimary: "Coming soon",
-    ctaSecondary: "See pricing",
+      "Live Lead / Follow seats on your own website. Couples enroll together. Interac, Stripe, or PayPal land in the same roster your door checks in. Keep your site — RitmoKit is the engine.",
+    ctaPrimary: "Subscribe — $79 / month",
+    ctaSecondary: "Book a 20-min walkthrough",
     cockpit: {
       title: "Studio Cockpit",
       live: "Live",
@@ -425,275 +466,281 @@ const en: Dictionary = {
       },
     },
     stats: [
-      { value: "< 5 min", label: "to publish a session" },
-      { value: "FR · EN · ES", label: "native trilingual" },
-      { value: "CA", label: "data hosted in Canada" },
+      { value: "Lead / Follow", label: "role quotas and waitlists" },
+      { value: "Your site", label: "API + week-N syllabus" },
+      { value: "CA", label: "Interac · Stripe · PayPal" },
+    ],
+  },
+  proof: {
+    items: [
+      { value: "1 tap", label: "Present at the door" },
+      { value: "2 seats", label: "Couple, one payment" },
+      { value: "FR · EN · ES", label: "Native trilingual" },
+      { value: "Québec", label: "Built with a pilot school" },
     ],
   },
   problem: {
     kicker: "The problem",
-    title:
-      "You opened a studio to teach passion. Not to spend your evenings on Excel and WhatsApp.",
-    subtitle: "The 4 silent killers eating your studio's profits:",
+    title: "You opened a studio to teach. Not to spend nights in Excel and WhatsApp.",
+    subtitle: "The 4 killers emptying the floor and the till:",
     killers: [
       {
-        title: "The Accueil line at 6:55 pm",
+        title: "The door line at 6:55 pm",
         description:
-          "Your team scans a paper sheet while students wait at the door — instead of welcoming them and keeping the floor moving.",
+          "Your team scans a paper sheet while students wait — instead of welcoming them and keeping the floor moving.",
       },
       {
         title: "Lead / Follow imbalance",
         description:
-          "Turning away motivated Follows because you're short on Leads — or discovering the gap only when class starts.",
+          "Turning away motivated Follows because you are short on Leads — or discovering the gap only when class starts.",
       },
       {
         title: "Double entry: website + clipboard",
         description:
-          "Registrations on your site, then re-keyed into Excel or Messenger. Two sources of truth that contradict each other every week.",
+          "Registrations on your site, then re-keyed into Excel or Messenger. Two truths that fight every week.",
       },
       {
-        title: "Yield numbers you can't trust",
+        title: "Money that does not land",
         description:
-          "Gut-feel revenue, spreadsheets and the till that don't match — no clear view of which class or tier (regular, student, couple) actually pays.",
+          "Interac with no code, PayPal on one side, cash on the other. Nobody knows who paid before class.",
       },
     ],
   },
   transformation: {
-    kicker: "The transformation",
-    title: "The elegant experience. Total automation.",
-    before: "What you have today",
-    after: "What you get with RitmoKit",
+    kicker: "What changes on Monday",
+    title: "Keep your website. Get one roster.",
+    before: "Today",
+    after: "With RitmoKit",
     rows: [
       {
         before: "Double entry: website + Excel",
-        afterTitle: "Public API + PayPal on your site",
+        afterTitle: "Enroll on your site",
         afterDescription:
-          "Registrations on your web storefront, payments confirmed in RitmoKit — one source of truth.",
+          "The student books on your storefront. RitmoKit gets the seat, the payment, and this week's syllabus.",
       },
       {
         before: "Imbalance discovered at night",
-        afterTitle: "Lead / Follow parity + role waitlists",
+        afterTitle: "Parity + couples",
         afterDescription:
-          "Real-time quotas, role-based waitlists, and auto-promotion when a spot opens up.",
+          "Role waitlists. A couple (Lead + Follow) enrolls together without breaking the floor.",
       },
       {
-        before: "Paper sheet at Accueil",
-        afterTitle: "Tablet Accueil — 1-click check-in",
+        before: "Paper sheet at the door",
+        afterTitle: "Tablet — 1-tap present",
         afterDescription:
-          "Tonight's classes, live Lead / Follow parity, paid or collect-payment status — your team welcomes instead of hunting names.",
+          "Tonight's classes, live parity, paid or collect. The door will not overfill a role.",
       },
       {
-        before: "Churn discovered too late",
-        afterTitle: "Risk watchlist + Dance Agentics",
+        before: "Interac lost in Messenger",
+        afterTitle: "Interac, Stripe, or PayPal",
         afterDescription:
-          "Waitlist and unpaid reminders run on their own. Churn outreach and soft capacity — you confirm or skip.",
+          "A booking code, a card checkout, or PayPal — the ticket activates in the same place.",
       },
     ],
   },
   features: {
-    kicker: "The 8 core pillars",
-    title: "Everything a modern dance school needs to run.",
-    subtitle:
-      "From the Teaching hub to the $/m² Cockpit — what RitmoKit ships in the app today, not a generic calendar.",
+    kicker: "Three reasons to leave a gym OS",
+    title: "What a gym OS will never do for a dance school.",
+    subtitle: "Calendar, teaching hub, and multi-room are included. This is why we exist.",
     pillars: [
       {
         name: "Lead / Follow parity",
-        tagline: "\u201cEvery role counts.\u201d",
+        tagline: "Every role has a seat.",
         description:
-          "Real-time quotas, role-based waitlists, and promotion when a spot opens — visible in Accueil, Sessions, and the Cockpit.",
+          "Live quotas, role waitlists, couples who unlock a spot, and an inscription advisor that picks the right night.",
       },
       {
-        name: "Accueil",
-        tagline: "\u201cOne tap, they're present.\u201d",
+        name: "Tablet door",
+        tagline: "One tap, they're present.",
         description:
-          "Tonight's classes, Lead / Follow parity, paid or collect-payment badges, waitlists — 1-click check-in on the front-desk tablet.",
+          "3-letter search, soirée mode, walk-in blocked when a role is full. Your team welcomes instead of hunting names.",
       },
       {
-        name: "Sessions & studio calendar",
-        tagline: "\u201cOne grid, zero double-bookings.\u201d",
+        name: "Your site, our engine",
+        tagline: "Not another website to run.",
         description:
-          "Quarters, red instructor/room conflicts, multi-view studio calendar, and private rentals with buffers between bookings.",
+          "Public API, this week's syllabus, Interac / Stripe / PayPal. The storefront stays yours.",
       },
-      {
-        name: "$/m² Cockpit",
-        tagline: "\u201cRevenue you can reconcile with PayPal.\u201d",
-        description:
-          "Tier-aware yield (regular, student, couple), profit per class, occupancy heatmaps, and churn risk watchlist — not gut-feel numbers.",
-      },
-      {
-        name: "Dance Agentics",
-        tagline: "\u201cRitmoKit proposes. You confirm.\u201d",
-        description:
-          "Waitlist and unpaid reminders run on their own. Soft capacity and churn outreach — suggestions on Accueil and Sessions, you approve before send.",
-      },
-      {
-        name: "Online payments",
-        tagline: "\u201cYour school's PayPal, not ours.\u201d",
-        description:
-          "Integration Hub in Settings → Integrations: headless public API, PayPal checkout, and test → live mode on your web storefront.",
-      },
-      {
-        name: "Teaching hub",
-        tagline: "\u201cSalsa L1 — Week 3, ready for tonight.\u201d",
-        description:
-          "Class plans, moves, choreography, studio guides, and video — new-teacher onboarding and safety when needed. No more recipe cards.",
-      },
-      {
-        name: "Team & compliance",
-        tagline: "\u201cInstructors, front desk, leadership — one OS.\u201d",
-        description:
-          "Staff shifts with CNESST guardrails, Nethris/Payworks payroll export, workplace convention, Pulse culture, and Students directory.",
-      },
+    ],
+    moreTitle: "Also in every Studio plan",
+    more: [
+      { name: "Sessions & rooms", description: "Seasons, instructor/room conflicts, rentals with buffers." },
+      { name: "Teaching hub", description: "Week N, Lead / Follow focus, video for tonight." },
+      { name: "Team", description: "Invites, roles, school switcher inside one brand." },
     ],
   },
   offer: {
     kicker: "Pricing",
-    title: "Clear tiers. From a single studio to a multi-room network.",
+    title: "Parity is not an add-on. It ships in Studio.",
     subtitle:
-      "Indicative pricing for upcoming self-serve billing. Today: Phase A pilot rollout or turnkey setup with Arsitech.",
+      "Stripe checkout — you pay today, we open your school next. Annual = 2 months free.",
     billing: {
       monthly: "Monthly",
       annual: "Annual",
-      recommended: "Recommended",
+      recommended: "2 months free",
     },
-    trialBadge: "Self-serve billing coming soon",
+    trialBadge: "Secure checkout with Stripe",
     footnote:
-      "Indicative pricing — product in founder pilot in Québec. Free trial and online billing arrive with public launch.",
+      "Prices in CAD + tax. Studio includes parity, couples, door, Interac/Stripe/PayPal, and the public API. We email you within 24h to connect your season.",
     plans: [
       {
         id: "solo",
-        name: "Solo / Studio",
-        tagline: "1 studio · up to 150 students",
+        name: "Studio",
+        tagline: "1 school · up to 150 students",
         badge: null,
         highlighted: false,
         monthly: {
           price: "$79",
           suffix: "/ month + tax",
-          note: "No commitment, cancel anytime",
+          note: "Cancel anytime",
         },
         annual: {
           price: "$59",
           suffix: "/ month + tax",
-          note: "Billed annually",
+          note: "Billed $708 / year",
           savings: "Save $240 / year",
         },
         features: [
-          "1 studio / location",
-          "Sessions grid, Accueil, Students & rentals",
-          "Basic Lead / Follow parity",
-          "Teaching hub (class plans & studio guides)",
-          "Integration Hub PayPal + public API",
+          "Lead / Follow parity + role waitlists",
+          "Couple enroll (2 seats, 1 payment)",
+          "Tablet door + smart walk-in",
+          "Public API + syllabus on your site",
+          "Interac, Stripe, or PayPal — your account",
+          "Teaching hub and room calendar",
         ],
-        cta: "Coming soon",
+        cta: "Subscribe with Stripe",
       },
       {
         id: "pro",
-        name: "Pro / Multi-Studio",
-        tagline: "Up to 3 studios · parity & team",
-        badge: "Popular",
+        name: "Multi",
+        tagline: "Up to 3 schools",
+        badge: "Most chosen",
         highlighted: true,
         monthly: {
           price: "$199",
           suffix: "/ month + tax",
-          note: "No commitment, cancel anytime",
+          note: "Cancel anytime",
         },
         annual: {
           price: "$149",
           suffix: "/ month + tax",
-          note: "Billed annually",
+          note: "Billed $1,788 / year",
           savings: "Save $600 / year",
         },
         features: [
-          "Up to 3 studios / locations",
-          "Parity engine + role waitlists",
-          "Staff payroll export (Nethris / Payworks) + CNESST shifts",
-          "$/m² Cockpit + heatmaps + slot promotion",
-          "Full Teaching hub (moves, choreography, video)",
-          "Dance Agentics (auto waitlist & unpaid)",
-          "Full public API",
+          "Everything in Studio, 3 locations",
+          "School switcher for leadership",
+          "Yield cockpit + heatmaps",
+          "Staff payroll export",
+          "Waitlist and unpaid follow-ups",
         ],
-        cta: "Coming soon",
+        cta: "Subscribe with Stripe",
       },
       {
         id: "entreprise",
-        name: "Enterprise / Multi-Room",
-        tagline: "5+ studios · advanced operations",
+        name: "Network",
+        tagline: "5+ schools",
         badge: "Multi-room",
         highlighted: false,
         monthly: {
           price: "$298",
           suffix: "/ month + tax",
-          note: "Network licence — listed regular value",
+          note: "Network licence",
         },
         annual: {
           price: "$224",
           suffix: "/ month + tax",
-          note: "Billed annually",
+          note: "Billed $2,688 / year",
           savings: "Save $888 / year",
         },
         features: [
-          "5+ studios / multi-room",
+          "Everything in Multi, 5+ locations",
           "Room matrix + private rentals",
-          "Advanced parity + waitlists",
-          "Agentics + churn risk watchlist",
-          "Multi-studio training catalog",
-          "Financial analytics ($/m², profit/class)",
-          "Priority support + CNESST guardrails",
+          "Network analytics",
+          "Priority support",
         ],
-        cta: "Coming soon",
+        cta: "Subscribe with Stripe",
       },
     ],
     agency: {
-      tag: "Optional custom setup",
-      name: "Arsitech onboarding",
+      tag: "Optional turnkey setup",
+      name: "We wire your site for you",
       price: "Custom quote",
-      description:
-        "For studios that prefer a turnkey rollout instead of self-serve integration.",
+      description: "If you want us to set season, CORS, and checkout instead of self-serve.",
       features: [
-        "Custom RitmoKit setup and full integration",
-        "Custom Next.js website (optional)",
-        "Domain, hosting & payment setup",
+        "ACTIVE season + site origins",
+        "Stripe / PayPal / Interac connected",
+        "Custom Next.js site (optional)",
       ],
-      cta: "Request a quote",
-      poweredBy: "Powered by Arsitech",
+      cta: "Email the team",
+      poweredBy: "Arsitech onboarding",
     },
   },
+  demo: {
+    kicker: "Studio walkthrough",
+    title: "20 minutes. Your grid, not a generic demo.",
+    subtitle:
+      "Tell us the school and the city. We show parity, the door, and checkout on your real timetable.",
+    name: "Your name",
+    studio: "School name",
+    email: "Email",
+    city: "City",
+    students: "Approx. students (optional)",
+    submit: "Request the walkthrough",
+    sending: "Sending…",
+    success: "Got it. We email you within 24h to book 20 minutes.",
+    error: "Could not send — write us at info@ritmokit.com.",
+  },
+  checkout: {
+    redirecting: "Opening Stripe…",
+    error: "Checkout is unavailable right now. Book a walkthrough or email info@ritmokit.com.",
+    missingKey: "Stripe is not connected on this site yet. Book a walkthrough — we will open your school by hand.",
+    successTitle: "Payment received. We will open your school.",
+    successBody:
+      "Stripe confirmed the subscription. You will get an email within 24h to connect season, site, and door.",
+    successCta: "Back to home",
+    cancelTitle: "Payment cancelled",
+    cancelBody: "Nothing was charged. Try again or book a 20-min walkthrough.",
+    cancelCta: "See pricing",
+  },
   finalCta: {
-    title: "Ready to take your studio to the next level?",
-    subtitle: "Join the studios that replaced chaos with a cockpit.",
-    cta: "See pricing",
+    title: "Monday at 6:55 pm does not have to be a line.",
+    subtitle: "Subscribe, or show us your grid in 20 minutes.",
+    cta: "Book a walkthrough",
   },
   footer: {
     tagline: "The operations kit for dance schools.",
     poweredBy: "Powered by",
     languages: "Trilingual",
-    contact: "Contact & customer support",
+    contact: "info@ritmokit.com",
+    privacy: "Privacy",
+    terms: "Terms",
     rights: "All rights reserved.",
   },
 };
 
 const es: Dictionary = {
   meta: {
-    title: "RitmoKit — El kit de operaciones para escuelas de danza",
+    title: "RitmoKit — Paridad Lead / Follow para escuelas de danza",
     description:
-      "Sesiones, paridad Lead / Follow, Accueil, alquiler de salas, Cockpit $/m², Guía del profe, Agentics y PayPal — el kit de operaciones para escuelas de danza en Québec.",
+      "Inscripciones en tu web. Asientos Lead / Follow en vivo, parejas, Interac y Stripe, recepción en tablet. El kit de operaciones para escuelas de danza en Québec.",
   },
   nav: {
     problem: "El problema",
-    features: "Funciones",
+    features: "Cómo funciona",
     pricing: "Precios",
-    bookDemo: "Próximamente",
+    bookDemo: "Reservar 20 min",
     themeToggle: "Cambiar tema",
     langSwitcher: "Cambiar idioma",
   },
   hero: {
-    badge: "El kit de operaciones para escuelas de danza",
-    title: "Toma el control total de tu",
-    titleAccent: "academia de baile.",
+    badge: "Hecho para salsa, bachata y kizomba — no para un gym",
+    title: "Deja de rechazar Follows",
+    titleAccent: "porque faltan Leads.",
     subtitle:
-      "Sesiones, paridad Lead / Follow, Accueil, alquiler de salas, Cockpit $/m², Guía del profe y PayPal en tu sitio web — una sola fuente de verdad. Fase A desplegada con un estudio piloto en Québec.",
-    ctaPrimary: "Próximamente",
-    ctaSecondary: "Ver precios",
+      "Asientos Lead / Follow en vivo en tu propia web. Las parejas se inscriben juntas. Interac, Stripe o PayPal llegan al mismo roster que la puerta. Tu sitio se queda — RitmoKit es el motor.",
+    ctaPrimary: "Suscribirse — 79 $ / mes",
+    ctaSecondary: "Reservar una visita de 20 min",
     cockpit: {
       title: "Cabina del Estudio",
       live: "En vivo",
@@ -710,249 +757,255 @@ const es: Dictionary = {
       },
     },
     stats: [
-      { value: "< 5 min", label: "para publicar una sesión" },
-      { value: "FR · EN · ES", label: "trilingüe nativo" },
-      { value: "CA", label: "datos alojados en Canadá" },
+      { value: "Lead / Follow", label: "cupos y waitlists por rol" },
+      { value: "Tu web", label: "API + temario semana N" },
+      { value: "CA", label: "Interac · Stripe · PayPal" },
+    ],
+  },
+  proof: {
+    items: [
+      { value: "1 toque", label: "Presente en la puerta" },
+      { value: "2 asientos", label: "Pareja, un solo pago" },
+      { value: "FR · EN · ES", label: "Trilingüe nativo" },
+      { value: "Québec", label: "Hecho con una escuela piloto" },
     ],
   },
   problem: {
     kicker: "El problema",
-    title:
-      "Abriste una academia para enseñar tu pasión. No para pasar las noches en Excel y WhatsApp.",
-    subtitle: "Los 4 asesinos silenciosos que devoran las ganancias de tu academia:",
+    title: "Abriste una academia para enseñar. No para pasar las noches en Excel y WhatsApp.",
+    subtitle: "Los 4 asesinos que vacían la pista y la caja:",
     killers: [
       {
-        title: "La fila de Accueil a las 18 h 55",
+        title: "La fila de recepción a las 18:55",
         description:
-          "Tu equipo busca nombres en una hoja mientras los alumnos esperan en la puerta — en lugar de recibirlos y mantener la pista en movimiento.",
+          "El equipo busca nombres en una hoja mientras los alumnos esperan — en lugar de recibirlos.",
       },
       {
         title: "Desequilibrio Lead / Follow",
         description:
-          "Rechazar Follows motivados porque faltan Leads — o descubrir el desequilibrio solo cuando empieza la clase.",
+          "Rechazar Follows motivados porque faltan Leads — o descubrir el hueco solo cuando empieza la clase.",
       },
       {
-        title: "Doble entrada: sitio web + libreta",
+        title: "Doble entrada: web + libreta",
         description:
-          "Inscripciones en tu sitio, luego reescritas en Excel o Messenger. Dos fuentes de verdad que se contradicen cada semana.",
+          "Inscripciones en tu sitio, luego reescritas en Excel o Messenger. Dos verdades que pelean cada semana.",
       },
       {
-        title: "Ingresos que no cuadran",
+        title: "El dinero que no llega",
         description:
-          "Cifras a ojo, Excel y caja que no coinciden — sin saber qué clase o tier (regular, estudiante, pareja) realmente rinde.",
+          "Interac sin código, PayPal a un lado, caja al otro. Nadie sabe quién pagó antes de la clase.",
       },
     ],
   },
   transformation: {
-    kicker: "La transformación",
-    title: "La experiencia elegante. La automatización total.",
-    before: "Lo que tienes hoy",
-    after: "Lo que obtienes con RitmoKit",
+    kicker: "Lo que cambia el lunes",
+    title: "Tu web se queda. El roster se unifica.",
+    before: "Hoy",
+    after: "Con RitmoKit",
     rows: [
       {
-        before: "Doble entrada: sitio web + Excel",
-        afterTitle: "API pública + PayPal en tu sitio",
+        before: "Doble entrada: web + Excel",
+        afterTitle: "Inscripción en tu sitio",
         afterDescription:
-          "Inscripciones en tu vitrina web, pagos confirmados en RitmoKit — una sola fuente de verdad.",
+          "El alumno reserva en tu vitrina. RitmoKit recibe el asiento, el pago y el temario de la semana.",
       },
       {
-        before: "Desequilibrio descubierto por la noche",
-        afterTitle: "Paridad Lead / Follow + waitlists por rol",
+        before: "Desequilibrio descubierto de noche",
+        afterTitle: "Paridad + parejas",
         afterDescription:
-          "Cuotas en tiempo real, listas de espera por rol y promoción auto cuando se libera un Lead.",
+          "Waitlists por rol. Una pareja (Lead + Follow) se inscribe junta sin romper el piso.",
       },
       {
-        before: "Hoja de papel en Accueil",
-        afterTitle: "Accueil en tableta — presencia en 1 clic",
+        before: "Hoja de papel en la puerta",
+        afterTitle: "Tablet — presente en 1 toque",
         afterDescription:
-          "Clases de esta noche, paridad Lead / Follow, pagado o pendiente de cobro — tu equipo recibe en lugar de buscar nombres.",
+          "Clases de esta noche, paridad en vivo, pagado o por cobrar. La puerta no llena de más un rol.",
       },
       {
-        before: "Churn descubierto demasiado tarde",
-        afterTitle: "Lista de riesgo + Dance Agentics",
+        before: "Interac perdido en Messenger",
+        afterTitle: "Interac, Stripe o PayPal",
         afterDescription:
-          "Waitlist e impagos van solos. Soft capacity y seguimiento churn — tú confirmas o descartas.",
+          "Un código, un checkout con tarjeta o PayPal — el ticket se activa en el mismo lugar.",
       },
     ],
   },
   features: {
-    kicker: "Los 8 pilares",
-    title: "Todo lo que una escuela de danza moderna necesita.",
-    subtitle:
-      "Desde la Guía del profe hasta el Cockpit $/m² — lo que RitmoKit entrega hoy en la app, no un calendario genérico.",
+    kicker: "Tres razones para dejar un OS de gym",
+    title: "Lo que un OS de gym nunca hará por una escuela de danza.",
+    subtitle: "Calendario, guía del profe y multi-sala están. Esto es por qué existimos.",
     pillars: [
       {
         name: "Paridad Lead / Follow",
-        tagline: "«Cada rol cuenta.»",
+        tagline: "Cada rol tiene un asiento.",
         description:
-          "Cuotas en tiempo real, waitlists por rol y promoción cuando se libera un lugar — visible en Accueil, Sessions y el Cockpit.",
+          "Cupos en vivo, waitlists por rol, parejas que desbloquean un lugar, y un consejero que elige la noche correcta.",
       },
       {
-        name: "Accueil",
-        tagline: "«Un toque, está presente.»",
+        name: "Puerta en tablet",
+        tagline: "Un toque, está presente.",
         description:
-          "Clases de esta noche, paridad Lead / Follow, pagado o pendiente de cobro, waitlists — check-in en 1 clic en la tablet de recepción.",
+          "Búsqueda de 3 letras, modo soirée, walk-in bloqueado si el rol está lleno. El equipo recibe en lugar de buscar nombres.",
       },
       {
-        name: "Sesiones y calendario studio",
-        tagline: "«Una grilla, cero reservas duplicadas.»",
+        name: "Tu web, nuestro motor",
+        tagline: "No otro sitio que mantener.",
         description:
-          "Trimestres, conflictos prof/sala en rojo, calendario multi-vista y alquileres privados con buffers entre reservas.",
+          "API pública, temario de la semana, Interac / Stripe / PayPal. La vitrina es tuya.",
       },
-      {
-        name: "Cockpit $/m²",
-        tagline: "«Ingresos conciliables con PayPal.»",
-        description:
-          "Yield por tier (regular, estudiante, pareja), beneficio por clase, mapas de calor y lista de riesgo churn — no cifras a ojo.",
-      },
-      {
-        name: "Dance Agentics",
-        tagline: "«RitmoKit propone. Tú confirmas.»",
-        description:
-          "Waitlist e impagos se gestionan solos. Soft capacity y seguimiento churn — sugerencias en Accueil y Sessions, tú apruebas antes del envío.",
-      },
-      {
-        name: "Pago en línea",
-        tagline: "«El PayPal de tu escuela, no el nuestro.»",
-        description:
-          "Integration Hub en Ajustes → Integraciones: API pública headless, checkout PayPal y modo prueba → real en tu vitrina web.",
-      },
-      {
-        name: "Guía del profe",
-        tagline: "«Salsa N1 — Semana 3, listo para esta noche.»",
-        description:
-          "Planes de clase, figuras, coreos, guías del estudio y video — bienvenida al profe nuevo y seguridad si hace falta. Sin fichas de «receta».",
-      },
-      {
-        name: "Equipo y conformidad",
-        tagline: "«Instructores, recepción, dirección — un solo OS.»",
-        description:
-          "Turnos staff con guardrails CNESST, export nómina Nethris/Payworks, convención de trabajo, Pulse cultura y directorio Alumnos.",
-      },
+    ],
+    moreTitle: "También en cada plan Studio",
+    more: [
+      { name: "Sesiones y salas", description: "Temporadas, conflictos profe/sala, alquileres con buffers." },
+      { name: "Guía del profe", description: "Semana N, foco Lead / Follow, video para esta noche." },
+      { name: "Equipo", description: "Invitaciones, roles, cambio de escuela en una misma marca." },
     ],
   },
   offer: {
     kicker: "Precios",
-    title: "Planes claros. Del estudio solo a la red multi-salas.",
+    title: "La paridad no es un extra. Viene en Studio.",
     subtitle:
-      "Precios indicativos para la facturación autoservicio próxima. Hoy: despliegue piloto Fase A o configuración llave en mano con Arsitech.",
+      "Checkout Stripe — pagas hoy, abrimos tu escuela después. Anual = 2 meses gratis.",
     billing: {
       monthly: "Mensual",
       annual: "Anual",
-      recommended: "Recomendado",
+      recommended: "2 meses gratis",
     },
-    trialBadge: "Facturación autoservicio próximamente",
+    trialBadge: "Pago seguro con Stripe",
     footnote:
-      "Precios indicativos — producto en piloto fundador en Québec. La prueba gratis y la facturación en línea llegan con el lanzamiento público.",
+      "Precios en CAD + impuestos. Studio incluye paridad, parejas, puerta, Interac/Stripe/PayPal y la API. Te escribimos en 24 h para conectar la temporada.",
     plans: [
       {
         id: "solo",
-        name: "Solo / Estudio",
-        tagline: "1 estudio · hasta 150 alumnos",
+        name: "Studio",
+        tagline: "1 escuela · hasta 150 alumnos",
         badge: null,
         highlighted: false,
         monthly: {
           price: "79 $",
           suffix: "/ mes + imp.",
-          note: "Sin compromiso, cancela cuando quieras",
+          note: "Sin compromiso",
         },
         annual: {
           price: "59 $",
           suffix: "/ mes + imp.",
-          note: "Facturación anual",
+          note: "Facturado 708 $ / año",
           savings: "Ahorra 240 $ / año",
         },
         features: [
-          "1 estudio / sede",
-          "Grilla Sesiones, Accueil, Alumnos y alquileres",
-          "Paridad Lead / Follow básica",
-          "Guía del profe (planes de clase y guías del estudio)",
-          "Integration Hub PayPal + API pública",
+          "Paridad Lead / Follow + waitlists por rol",
+          "Inscripción en pareja (2 asientos, 1 pago)",
+          "Puerta tablet + walk-in inteligente",
+          "API pública + temario en tu web",
+          "Interac, Stripe o PayPal — tu cuenta",
+          "Guía del profe y calendario de salas",
         ],
-        cta: "Próximamente",
+        cta: "Suscribirse con Stripe",
       },
       {
         id: "pro",
-        name: "Pro / Multi-Estudio",
-        tagline: "Hasta 3 estudios · paridad y equipo",
-        badge: "Popular",
+        name: "Multi",
+        tagline: "Hasta 3 escuelas",
+        badge: "El más elegido",
         highlighted: true,
         monthly: {
           price: "199 $",
           suffix: "/ mes + imp.",
-          note: "Sin compromiso, cancela cuando quieras",
+          note: "Sin compromiso",
         },
         annual: {
           price: "149 $",
           suffix: "/ mes + imp.",
-          note: "Facturación anual",
+          note: "Facturado 1 788 $ / año",
           savings: "Ahorra 600 $ / año",
         },
         features: [
-          "Hasta 3 estudios / sedes",
-          "Motor de paridad + waitlists por rol",
-          "Export nómina equipo (Nethris / Payworks) + turnos CNESST",
-          "Cockpit $/m² + mapas de calor + promoción de horarios",
-          "Guía del profe completa (figuras, coreos, video)",
-          "Dance Agentics (waitlist e impagos auto)",
-          "API pública completa",
+          "Todo Studio, 3 sedes",
+          "Cambio de escuela para dirección",
+          "Cockpit de ingresos + mapas de calor",
+          "Export de nómina",
+          "Seguimiento de waitlist e impagos",
         ],
-        cta: "Próximamente",
+        cta: "Suscribirse con Stripe",
       },
       {
         id: "entreprise",
-        name: "Empresa / Multi-Salas",
-        tagline: "5+ estudios · operaciones avanzadas",
+        name: "Red",
+        tagline: "5+ escuelas",
         badge: "Multi-salas",
         highlighted: false,
         monthly: {
           price: "298 $",
           suffix: "/ mes + imp.",
-          note: "Licencia de red — valor regular publicado",
+          note: "Licencia de red",
         },
         annual: {
           price: "224 $",
           suffix: "/ mes + imp.",
-          note: "Facturación anual",
+          note: "Facturado 2 688 $ / año",
           savings: "Ahorra 888 $ / año",
         },
         features: [
-          "5+ estudios / multi-salas",
-          "Matriz de salas + alquileres privados",
-          "Paridad avanzada + listas de espera",
-          "Agentics + lista de riesgo churn",
-          "Catálogo de formación multi-estudios",
-          "Analítica financiera ($/m², beneficio/clase)",
-          "Soporte prioritario + guardrails CNESST",
+          "Todo Multi, 5+ sedes",
+          "Matriz de salas + alquileres",
+          "Analítica de red",
+          "Soporte prioritario",
         ],
-        cta: "Próximamente",
+        cta: "Suscribirse con Stripe",
       },
     ],
     agency: {
-      tag: "Configuración personalizada (opcional)",
-      name: "Acompañamiento Arsitech",
-      price: "Cotización a medida",
-      description:
-        "Para academias que prefieren un despliegue llave en mano en lugar de la integración autoservicio.",
+      tag: "Puesta en marcha (opcional)",
+      name: "Conectamos tu web por ti",
+      price: "Cotización",
+      description: "Si prefieres que configuremos temporada, CORS y checkout.",
       features: [
-        "Configuración personalizada e integración completa de RitmoKit",
-        "Sitio web Next.js a medida (opcional)",
-        "Configuración de dominio, alojamiento y pagos",
+        "Temporada ACTIVE + orígenes del sitio",
+        "Stripe / PayPal / Interac conectados",
+        "Sitio Next.js a medida (opcional)",
       ],
-      cta: "Solicitar cotización",
-      poweredBy: "Impulsado por Arsitech",
+      cta: "Escribir al equipo",
+      poweredBy: "Acompañamiento Arsitech",
     },
   },
+  demo: {
+    kicker: "Visita al estudio",
+    title: "20 minutos. Tu grilla, no una demo genérica.",
+    subtitle:
+      "Dinos la escuela y la ciudad. Mostramos paridad, puerta y checkout sobre tus horarios reales.",
+    name: "Tu nombre",
+    studio: "Nombre de la escuela",
+    email: "Correo",
+    city: "Ciudad",
+    students: "Alumnos aprox. (opcional)",
+    submit: "Pedir la visita",
+    sending: "Enviando…",
+    success: "Recibido. Te escribimos en 24 h para agendar 20 minutos.",
+    error: "No se pudo enviar — escríbenos a info@ritmokit.com.",
+  },
+  checkout: {
+    redirecting: "Abriendo Stripe…",
+    error: "El pago no está disponible. Reserva una visita o escribe a info@ritmokit.com.",
+    missingKey: "Stripe aún no está conectado en este sitio. Reserva una visita — abrimos tu escuela a mano.",
+    successTitle: "Pago recibido. Abriremos tu escuela.",
+    successBody:
+      "Stripe confirmó la suscripción. Recibirás un correo en 24 h para conectar temporada, web y puerta.",
+    successCta: "Volver al inicio",
+    cancelTitle: "Pago cancelado",
+    cancelBody: "No se cobró nada. Puedes reintentar o reservar 20 minutos.",
+    cancelCta: "Ver precios",
+  },
   finalCta: {
-    title: "¿Listo para llevar tu academia al siguiente nivel?",
-    subtitle: "Únete a las academias que reemplazaron el caos por una cabina de mando.",
-    cta: "Ver precios",
+    title: "El lunes a las 18:55 no tiene que ser una fila.",
+    subtitle: "Suscríbete, o muéstranos tu grilla en 20 minutos.",
+    cta: "Reservar una visita",
   },
   footer: {
     tagline: "El kit de operaciones para escuelas de danza.",
     poweredBy: "Impulsado por",
     languages: "Trilingüe",
-    contact: "Contacto y soporte al cliente",
+    contact: "info@ritmokit.com",
+    privacy: "Privacidad",
+    terms: "Términos",
     rights: "Todos los derechos reservados.",
   },
 };

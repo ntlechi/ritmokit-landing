@@ -48,12 +48,12 @@ export function SiteHeader({
         <div className="flex items-center gap-2 sm:gap-3">
           <LangSwitcher lang={lang} label={dict.langSwitcher} />
           <ThemeToggle label={dict.themeToggle} />
-          <span
-            aria-disabled="true"
-            className="soon-button hidden rounded-full px-4 py-2 text-sm font-semibold sm:inline-flex"
+          <a
+            href="#demo"
+            className="glow-button hidden rounded-full px-4 py-2 text-sm font-semibold text-white sm:inline-flex"
           >
             {dict.bookDemo}
-          </span>
+          </a>
         </div>
       </div>
     </header>

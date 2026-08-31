@@ -4,7 +4,9 @@ import { useState } from "react";
 import clsx from "clsx";
 import { Check, Globe, Building2, Layers, Sparkles } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Locale } from "@/lib/i18n/config";
 import { Reveal } from "@/components/reveal";
+import { CheckoutButton } from "@/components/checkout-button";
 
 type BillingPeriod = "monthly" | "annual";
 
@@ -14,7 +16,15 @@ const PLAN_ICONS = {
   entreprise: Layers,
 } as const;
 
-export function Offer({ dict }: { dict: Dictionary["offer"] }) {
+export function Offer({
+  lang,
+  dict,
+  checkout,
+}: {
+  lang: Locale;
+  dict: Dictionary["offer"];
+  checkout: Dictionary["checkout"];
+}) {
   const [billing, setBilling] = useState<BillingPeriod>("monthly");
 
   return (
@@ -177,12 +187,15 @@ export function Offer({ dict }: { dict: Dictionary["offer"] }) {
                     ))}
                   </ul>
 
-                  <span
-                    aria-disabled="true"
-                    className="soon-button mt-8 inline-flex cursor-not-allowed items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold"
-                  >
-                    {plan.cta}
-                  </span>
+                  <CheckoutButton
+                    plan={plan.id}
+                    billing={billing}
+                    lang={lang}
+                    label={plan.cta}
+                    redirecting={checkout.redirecting}
+                    errorLabel={checkout.error}
+                    highlighted={plan.highlighted}
+                  />
                 </div>
               </Reveal>
             );

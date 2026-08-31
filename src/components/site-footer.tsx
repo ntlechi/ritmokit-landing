@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { CONTACT_EMAIL } from "@/lib/contact";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { Logo } from "@/components/logo";
 
@@ -60,12 +61,20 @@ export function SiteFooter({
             ))}
           </div>
           <a
-            href="mailto:hello@ritmokit.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="inline-flex items-center gap-2 text-ink-muted transition-colors hover:text-ink"
           >
             <Mail className="h-4 w-4" aria-hidden="true" />
             {dict.contact}
           </a>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-faint">
+            <Link href={`/${lang}/legal/privacy`} className="hover:text-ink">
+              {dict.privacy}
+            </Link>
+            <Link href={`/${lang}/legal/terms`} className="hover:text-ink">
+              {dict.terms}
+            </Link>
+          </div>
           <p className="text-xs text-ink-faint">
             © {year} RitmoKit. {dict.rights}
           </p>

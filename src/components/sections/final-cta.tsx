@@ -22,7 +22,7 @@ export function FinalCta({ dict }: { dict: Dictionary["finalCta"] }) {
           </h2>
           <p className="mt-5 text-base text-ink-muted sm:text-lg">{dict.subtitle}</p>
           <a
-            href="#offer"
+            href="#demo"
             className="glow-button mt-10 inline-flex items-center justify-center gap-2 rounded-full px-9 py-4 text-base font-bold text-white"
           >
             {dict.cta}
