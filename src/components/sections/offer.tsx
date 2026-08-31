@@ -189,6 +189,12 @@ export function Offer({ dict }: { dict: Dictionary["offer"] }) {
           })}
         </div>
 
+        <Reveal delay={0.24}>
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-ink-muted">
+            {dict.footnote}
+          </p>
+        </Reveal>
+
         <Reveal delay={0.28}>
           <div className="glass-card mx-auto mt-8 flex max-w-4xl flex-col gap-6 rounded-3xl p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div className="min-w-0 flex-1">
